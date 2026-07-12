@@ -40,7 +40,6 @@ const Process = () => {
       className="w-full py-[60px] md:py-[100px] relative overflow-hidden font-sans flex items-center"
       id="process"
     >
-      {/* Inline Styles for SVG Pulse effect */}
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes pulse-flow {
           0% {
@@ -54,12 +53,17 @@ const Process = () => {
           stroke-dasharray: 25 125;
           animation: pulse-flow 6s linear infinite;
         }
+        @media (min-width: 1024px) and (max-width: 1260px) {
+          .process-card-container {
+            width: 220px !important;
+          }
+        }
       `}} />
 
       {/* Desktop / Large Screens Layout */}
-      <div className="hidden lg:block w-full relative h-[650px] max-w-7xl mx-auto px-4">
+      <div className="hidden lg:block w-full relative h-[650px] max-w-[var(--content-width)] mx-auto px-0">
         {/* Header Block */}
-        <div className="absolute left-[4%] top-[4%] max-w-[28%] z-30">
+        <div className="absolute left-0 top-[4%] max-w-[28%] z-30">
           <SectionHeader
             badge="Process"
             title1="Growth"
@@ -68,173 +72,178 @@ const Process = () => {
           />
         </div>
 
-        {/* The Animated SVG Path Container */}
-        <div className="absolute inset-0 w-full h-full pointer-events-none z-10">
-          <svg
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-            className="w-full h-full overflow-visible"
-          >
-            <defs>
-              <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#ffd8c2" />
-                <stop offset="30%" stopColor="#ff9f66" />
-                <stop offset="65%" stopColor="#ff7b30" />
-                <stop offset="100%" stopColor="#ff5a00" />
-              </linearGradient>
-              <linearGradient id="pulse-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="rgba(255, 90, 0, 0)" />
-                <stop offset="50%" stopColor="#ff5a00" stopOpacity="1" />
-                <stop offset="100%" stopColor="rgba(255, 90, 0, 0)" />
-              </linearGradient>
-            </defs>
-
-            {/* The Background Wavy Track */}
-            <path
-              d="M 15 55 C 20 55, 25 60, 30 60 C 38 60, 47 38, 55 38 C 63 38, 72 60, 80 60 C 84 60, 88 55, 92 55"
-              stroke="#f5ebe6"
-              strokeWidth="1.2"
-              fill="none"
-            />
-
-            {/* The Animated Wavy Line */}
-            <m.path
-              d="M 15 55 C 20 55, 25 60, 30 60 C 38 60, 47 38, 55 38 C 63 38, 72 60, 80 60 C 84 60, 88 55, 92 55"
-              stroke="url(#line-gradient)"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              fill="none"
-              initial={{ pathLength: shouldReduceMotion ? 1 : 0 }}
-              whileInView={{ pathLength: 1 }}
-              viewport={{ once: true, margin: '-25px' }}
-              transition={{ duration: shouldReduceMotion ? 0 : 2.2, ease: [0.16, 1, 0.3, 1] }}
-            />
-
-            {/* The Glowing Pulse that flows along the path */}
-            <m.path
-              d="M 15 55 C 20 55, 25 60, 30 60 C 38 60, 47 38, 55 38 C 63 38, 72 60, 80 60 C 84 60, 88 55, 92 55"
-              stroke="url(#pulse-gradient)"
-              strokeWidth="3.5"
-              strokeLinecap="round"
-              fill="none"
-              className="pulse-line"
-            />
-          </svg>
-        </div>
-
-        {/* HTML Content for Nodes and Hanging/Rising Alternating Cards */}
-        {processSteps.map((stepItem, idx) => {
-          const isHovered = activeStep === idx;
-          const isBelow = stepItem.step !== '02'; // Phase 1 and 3 hang below, Phase 2 rises above
-
-          return (
-            <div
-              key={stepItem.step}
-              style={{
-                position: 'absolute',
-                left: `${stepItem.x}%`,
-                top: `${stepItem.y}%`,
-                transform: 'translate(-50%, -50%)',
-                zIndex: 20,
-              }}
-              className="flex flex-col items-center"
+        {/* Timeline Content Wrapper shifted down by 35px to prevent top clipping of Card 2 */}
+        <div className="absolute inset-0 transform translate-y-[35px]">
+          {/* The Animated SVG Path Container */}
+          <div className="absolute inset-0 w-full h-full pointer-events-none z-10">
+            <svg
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+              className="w-full h-full overflow-visible"
+              aria-hidden="true"
+              role="presentation"
             >
-              {/* Perfect Circle HTML Node */}
-              <m.div
-                initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+              <defs>
+                <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#ffd8c2" />
+                  <stop offset="30%" stopColor="#ff9f66" />
+                  <stop offset="65%" stopColor="#ff7b30" />
+                  <stop offset="100%" stopColor="#ff5a00" />
+                </linearGradient>
+                <linearGradient id="pulse-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="rgba(255, 90, 0, 0)" />
+                  <stop offset="50%" stopColor="#ff5a00" stopOpacity="1" />
+                  <stop offset="100%" stopColor="rgba(255, 90, 0, 0)" />
+                </linearGradient>
+              </defs>
+
+              {/* The Background Wavy Track */}
+              <path
+                d="M 15 55 C 20 55, 25 60, 30 60 C 38 60, 47 38, 55 38 C 63 38, 72 60, 80 60 C 84 60, 88 55, 92 55"
+                stroke="#f5ebe6"
+                strokeWidth="1.2"
+                fill="none"
+              />
+
+              {/* The Animated Wavy Line */}
+              <m.path
+                d="M 15 55 C 20 55, 25 60, 30 60 C 38 60, 47 38, 55 38 C 63 38, 72 60, 80 60 C 84 60, 88 55, 92 55"
+                stroke="url(#line-gradient)"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                fill="none"
+                initial={{ pathLength: shouldReduceMotion ? 1 : 0 }}
+                whileInView={{ pathLength: 1 }}
                 viewport={{ once: true, margin: '-25px' }}
-                transition={shouldReduceMotion ? { duration: 0.3 } : { delay: stepItem.delay - 0.2, duration: 0.4, type: 'spring' }}
-                onMouseEnter={() => setActiveStep(idx)}
-                onMouseLeave={() => setActiveStep(null)}
-                className="relative w-8 h-8 rounded-full bg-white border border-gray-100 shadow-[0_4px_12px_rgba(0,0,0,0.05)] flex items-center justify-center cursor-pointer transition-all duration-300 z-30"
+                transition={{ duration: shouldReduceMotion ? 0 : 2.2, ease: [0.16, 1, 0.3, 1] }}
+              />
+
+              {/* The Glowing Pulse that flows along the path */}
+              <m.path
+                d="M 15 55 C 20 55, 25 60, 30 60 C 38 60, 47 38, 55 38 C 63 38, 72 60, 80 60 C 84 60, 88 55, 92 55"
+                stroke="url(#pulse-gradient)"
+                strokeWidth="3.5"
+                strokeLinecap="round"
+                fill="none"
+                className="pulse-line"
+              />
+            </svg>
+          </div>
+
+          {/* HTML Content for Nodes and Hanging/Rising Alternating Cards */}
+          {processSteps.map((stepItem, idx) => {
+            const isHovered = activeStep === idx;
+            const isBelow = stepItem.step !== '02'; // Phase 1 and 3 hang below, Phase 2 rises above
+
+            return (
+              <div
+                key={stepItem.step}
                 style={{
-                  transform: isHovered ? 'scale(1.2)' : 'scale(1)',
+                  position: 'absolute',
+                  left: stepItem.step === '03' ? 'calc(80% - 12px)' : `${stepItem.x}%`,
+                  top: `${stepItem.y}%`,
+                  transform: 'translate(-50%, -50%)',
+                  zIndex: 20,
                 }}
+                className="flex flex-col items-center"
               >
-                {/* Inner core dot */}
-                <div
-                  className="w-2.5 h-2.5 rounded-full bg-[#ff5a00] transition-transform duration-300"
+                {/* Perfect Circle HTML Node */}
+                <m.div
+                  initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, margin: '-25px' }}
+                  transition={shouldReduceMotion ? { duration: 0.3 } : { delay: stepItem.delay - 0.2, duration: 0.4, type: 'spring' }}
+                  onMouseEnter={() => setActiveStep(idx)}
+                  onMouseLeave={() => setActiveStep(null)}
+                  className="relative w-8 h-8 rounded-full bg-white border border-gray-100 shadow-[0_4px_12px_rgba(0,0,0,0.05)] flex items-center justify-center cursor-pointer transition-all duration-300 z-30"
                   style={{
                     transform: isHovered ? 'scale(1.2)' : 'scale(1)',
                   }}
-                />
-
-                {/* Ping shadow animation on hover */}
-                {isHovered && (
-                  <span className="absolute inset-0 rounded-full border-2 border-[#ff5a00] animate-ping opacity-35" />
-                )}
-              </m.div>
-
-              {/* Visual Connector Line with Traveling Energy Dot */}
-              <div
-                className="absolute w-[1.5px] transition-all duration-300"
-                style={{
-                  [isBelow ? 'top' : 'bottom']: '16px',
-                  height: '64px',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  backgroundColor: isHovered ? '#ff5a00' : '#ffd8c2',
-                  opacity: isHovered ? 1 : 0.6,
-                }}
-              >
-                {isHovered && (
-                  <m.div
-                    className="absolute w-1.5 h-1.5 rounded-full bg-[#ff5a00] shadow-[0_0_8px_#ff5a00]"
-                    initial={{ y: isBelow ? 0 : 64 }}
-                    animate={{ y: isBelow ? 64 : 0 }}
-                    transition={{ duration: 0.8, repeat: Infinity, ease: 'linear' }}
-                    style={{ left: '-2.25px' }}
+                >
+                  {/* Inner core dot */}
+                  <div
+                    className="w-2.5 h-2.5 rounded-full bg-[#ff5a00] transition-transform duration-300"
+                    style={{
+                      transform: isHovered ? 'scale(1.2)' : 'scale(1)',
+                    }}
                   />
-                )}
-              </div>
 
-              {/* Alternating Card Container (Below or Above) */}
-              <m.div
-                initial={{ 
-                  opacity: 0, 
-                  y: shouldReduceMotion ? 0 : (isBelow ? 30 : -30) 
-                }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-25px' }}
-                transition={{ delay: shouldReduceMotion ? 0 : stepItem.delay * 0.6, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                onMouseEnter={() => setActiveStep(idx)}
-                onMouseLeave={() => setActiveStep(null)}
-                className={`absolute ${isBelow ? 'top-20' : 'bottom-20'} left-1/2 -translate-x-1/2 w-[280px] cursor-default group/card`}
-              >
-                {/* Premium Glassmorphic Card */}
-                <div className="w-full bg-white/75 backdrop-blur-md border border-gray-100/90 shadow-[0_12px_35px_rgba(0,0,0,0.02)] hover:shadow-[0_24px_50px_rgba(255,90,0,0.07)] hover:border-[#ff5a00]/35 hover:-translate-y-2 rounded-[2rem] p-6 transition-all duration-500 flex flex-col gap-4">
-                  <div className="flex items-center justify-between w-full">
-                    <div className="flex items-center gap-2">
-                      <span className="text-[10px] font-extrabold px-2.5 py-1 bg-orange-50 text-[#ff5a00] rounded-full">
-                        {stepItem.step}
-                      </span>
-                      <span className="text-[9px] font-bold tracking-wider text-gray-400 uppercase">
-                        {stepItem.step === '01' ? 'Phase 01' : stepItem.step === '02' ? 'Phase 02' : 'Phase 03'}
-                      </span>
-                    </div>
-                    <div className="w-9 h-9 rounded-full bg-orange-50/70 text-[#ff5a00] flex items-center justify-center group-hover/card:bg-[#ff5a00] group-hover/card:text-white transition-all duration-500">
-                      {getStepIcon(stepItem.step)}
-                    </div>
-                  </div>
+                  {/* Ping shadow animation on hover */}
+                  {isHovered && (
+                    <span className="absolute inset-0 rounded-full border-2 border-[#ff5a00] animate-ping opacity-35" />
+                  )}
+                </m.div>
 
-                  <div>
-                    <h3 className="text-[1.05rem] font-bold text-[#0F0F0F] mb-2 group-hover/card:text-[#ff5a00] transition-colors duration-300">
-                      {stepItem.title}
-                    </h3>
-                    <p className="text-gray-500 text-[0.8rem] leading-relaxed">
-                      {stepItem.desc}
-                    </p>
-                  </div>
+                {/* Visual Connector Line with Traveling Energy Dot */}
+                <div
+                  className="absolute w-[1.5px] transition-all duration-300"
+                  style={{
+                    [isBelow ? 'top' : 'bottom']: '16px',
+                    height: isBelow ? '64px' : '36px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    backgroundColor: isHovered ? '#ff5a00' : '#ffd8c2',
+                    opacity: isHovered ? 1 : 0.6,
+                  }}
+                >
+                  {isHovered && (
+                    <m.div
+                      className="absolute w-1.5 h-1.5 rounded-full bg-[#ff5a00] shadow-[0_0_8px_#ff5a00]"
+                      initial={{ y: isBelow ? 0 : 36 }}
+                      animate={{ y: isBelow ? 64 : 0 }}
+                      transition={{ duration: 0.8, repeat: Infinity, ease: 'linear' }}
+                      style={{ left: '-2.25px' }}
+                    />
+                  )}
                 </div>
-              </m.div>
-            </div>
-          );
-        })}
+
+                {/* Alternating Card Container (Below or Above) */}
+                <m.div
+                  initial={{ 
+                    opacity: 0, 
+                    y: shouldReduceMotion ? 0 : (isBelow ? 30 : -30) 
+                  }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-25px' }}
+                  transition={{ delay: shouldReduceMotion ? 0 : stepItem.delay * 0.6, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                  onMouseEnter={() => setActiveStep(idx)}
+                  onMouseLeave={() => setActiveStep(null)}
+                  className={`absolute ${isBelow ? 'top-20' : 'bottom-[52px]'} left-1/2 -translate-x-1/2 w-[280px] cursor-default group/card process-card-container`}
+                >
+                  {/* Premium Glassmorphic Card */}
+                  <div className="w-full bg-white/75 backdrop-blur-md border border-gray-100/90 shadow-[0_12px_35px_rgba(0,0,0,0.02)] hover:shadow-[0_24px_50px_rgba(255,90,0,0.07)] hover:border-[#ff5a00]/35 hover:-translate-y-2 rounded-[2rem] p-6 transition-all duration-500 flex flex-col gap-4">
+                    <div className="flex items-center justify-between w-full">
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] font-extrabold px-2.5 py-1 bg-orange-50 text-[#ff5a00] rounded-full">
+                          {stepItem.step}
+                        </span>
+                        <span className="text-[9px] font-bold tracking-wider text-gray-400 uppercase">
+                          {stepItem.step === '01' ? 'Phase 01' : stepItem.step === '02' ? 'Phase 02' : 'Phase 03'}
+                        </span>
+                      </div>
+                      <div className="w-9 h-9 rounded-full bg-orange-50/70 text-[#ff5a00] flex items-center justify-center group-hover/card:bg-[#ff5a00] group-hover/card:text-white transition-all duration-500">
+                        {getStepIcon(stepItem.step)}
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[1.05rem] font-bold text-[#0F0F0F] mb-2 group-hover/card:text-[#ff5a00] transition-colors duration-300">
+                        {stepItem.title}
+                      </h3>
+                      <p className="text-gray-500 text-[0.8rem] leading-relaxed">
+                        {stepItem.desc}
+                      </p>
+                    </div>
+                  </div>
+                </m.div>
+              </div>
+            );
+          })}
+        </div>
       </div>
 
       {/* Mobile / Tablet Screens Layout (Alternating rhythm preserved) */}
-      <div className="lg:hidden w-full flex flex-col gap-10 px-4 sm:px-8">
+      <div className="lg:hidden w-full flex flex-col gap-10 px-0">
         <div>
           <SectionHeader
             badge="Process"

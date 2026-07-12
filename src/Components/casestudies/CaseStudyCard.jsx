@@ -31,8 +31,8 @@ const CaseStudyCard = memo(({ study, index }) => {
       </div>
 
       {/* Action Button */}
-      <div className="relative z-10 mt-auto pt-12">
-        <a href="#contact" className="text-[10px] font-bold tracking-widest text-white uppercase flex items-center gap-2 group-hover:text-[#ff5a00] transition-colors outline-none focus:outline-none">
+      <div className="relative z-10 mt-auto pt-12 pr-20 md:pr-0">
+        <a href="#contact" className="text-[10px] font-bold tracking-widest text-white uppercase flex items-center gap-2 group-hover:text-[#ff5a00] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff5a00] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A1A1A] rounded">
           VIEW CASE STUDY
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <line x1="5" y1="19" x2="19" y2="5"></line>

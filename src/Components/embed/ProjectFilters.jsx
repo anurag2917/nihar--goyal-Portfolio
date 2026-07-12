@@ -7,7 +7,8 @@ const ProjectFilters = memo(({ filters, activeFilter, onSelectFilter }) => {
       style={{
         display: 'flex',
         justifyContent: 'center',
-        gap: '12px',
+        columnGap: '12px',
+        rowGap: '16px',
         marginBottom: '48px',
         flexWrap: 'wrap',
       }}

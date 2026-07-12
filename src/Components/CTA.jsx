@@ -35,11 +35,11 @@ const CTA = () => {
               <div className="form-inputs">
                  <div className="fi-group">
                     <label htmlFor="cta-name">YOUR NAME</label>
-                    <input id="cta-name" type="text" name="name" className="fi-input" placeholder="John Doe" required />
+                    <input id="cta-name" type="text" name="name" className="fi-input" placeholder="John Doe" autoComplete="name" required />
                  </div>
                  <div className="fi-group">
                     <label htmlFor="cta-email">EMAIL ADDRESS</label>
-                    <input id="cta-email" type="email" name="email" className="fi-input" placeholder="hello@example.com" required />
+                    <input id="cta-email" type="email" name="email" className="fi-input" placeholder="hello@example.com" autoComplete="email" required />
                  </div>
               </div>
 

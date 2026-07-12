@@ -26,9 +26,9 @@ const EmbedProject = () => {
 
   return (
     <section className="embed-work-section py-[60px] md:py-[100px]" id="work" style={{ position: 'relative', overflow: 'hidden', zIndex: 11 }}>
-      <div className="embed-container" style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+      <div className="embed-container" style={{ maxWidth: 'var(--content-width)', margin: '0 auto', position: 'relative', zIndex: 1 }}>
         {/* Header */}
-        <div className="embed-header mb-12">
+        <div className="embed-header mb-[58px]">
           <SectionHeader
             badge="Work"
             title1="Work that"
@@ -145,9 +145,7 @@ const EmbedProject = () => {
           object-fit: cover;
           transition: transform 0.5s ease;
         }
-        .embed-card:hover .ec-thumbnail img {
-          transform: scale(1.05);
-        }
+
         .ec-play-overlay {
           position: absolute;
           inset: 0;
@@ -260,7 +258,10 @@ const EmbedProject = () => {
           .embed-projects-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 768px) {
-          .embed-projects-grid { grid-template-columns: 1fr; }
+          .embed-projects-grid {
+            grid-template-columns: 1fr;
+            gap: 24px;
+          }
 
           .evo-iframe-wrapper {
             width: 95vw;

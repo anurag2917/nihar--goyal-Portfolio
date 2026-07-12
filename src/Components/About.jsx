@@ -78,7 +78,7 @@ const About = () => {
             <div className="hidden sm:block w-px h-6 bg-gray-200 mx-2"></div>
             <a
               href="#contact"
-              className="text-[10px] font-bold tracking-widest text-[#0F0F0F] uppercase flex items-center gap-2 hover:text-[#ff5a00] transition-colors py-2 sm:py-0"
+              className="text-[10px] font-bold tracking-widest text-[#0F0F0F] uppercase flex items-center gap-2 hover:text-[#ff5a00] transition-colors py-2 sm:py-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff5a00] focus-visible:ring-offset-2 rounded"
             >
               LET'S CONNECT
               <svg
@@ -163,7 +163,7 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="bg-white border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-[2rem] p-10 flex flex-col gap-10"
+            className="bg-white border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-[2rem] p-6 sm:p-10 flex flex-col gap-10"
           >
             <div className="inline-flex items-center px-4 py-1.5 border border-orange-100 rounded-full max-w-max">
               <span className="text-[10px] font-bold tracking-widest text-[#ff5a00] uppercase">

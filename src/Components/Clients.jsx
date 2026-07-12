@@ -12,7 +12,7 @@ const Clients = () => {
           title2="Real impact."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full testimonials-grid items-stretch overflow-visible">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full items-stretch overflow-visible">
           {testimonialsData.map((testimonial) => (
             <TestimonialCard key={testimonial.id} testimonial={testimonial} />
           ))}

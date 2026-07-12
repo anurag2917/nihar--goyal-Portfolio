@@ -82,9 +82,9 @@ const Footer = () => {
         }
 
         .footer-cta-container {
-          max-width: 1200px;
+          max-width: var(--content-width);
           margin: 0 auto;
-          padding: 4rem 2rem;
+          padding: 4rem var(--content-padding-desktop);
         }
 
         .footer-cta-card {
@@ -147,9 +147,9 @@ const Footer = () => {
         }
 
         .footer-nav-container {
-          max-width: 1200px;
+          max-width: var(--content-width);
           margin: 0 auto;
-          padding: 3rem 2rem;
+          padding: 3rem var(--content-padding-desktop);
           display: flex;
           justify-content: space-between;
           align-items: flex-end;
@@ -234,11 +234,29 @@ const Footer = () => {
           height: 20px;
         }
 
+        @media (max-width: 1400px) {
+          .footer-cta-container {
+            padding-inline: var(--content-padding-laptop);
+          }
+          .footer-nav-container {
+            padding-inline: var(--content-padding-laptop);
+          }
+        }
+
+        @media (max-width: 1024px) {
+          .footer-cta-container {
+            padding-inline: var(--content-padding-tablet);
+          }
+          .footer-nav-container {
+            padding-inline: var(--content-padding-tablet);
+          }
+        }
+
         @media (max-width: 768px) {
           .footer-cta-card {
             flex-direction: column;
             align-items: flex-start;
-            padding: 2.5rem 2rem;
+            padding: 2.5rem var(--content-padding-mobile);
             gap: 1.5rem;
           }
 
@@ -246,11 +264,15 @@ const Footer = () => {
             font-size: 1.75rem;
           }
 
+          .footer-cta-container {
+            padding: 2.5rem var(--content-padding-mobile);
+          }
+
           .footer-nav-container {
             flex-direction: column;
             align-items: flex-start;
             gap: 2.5rem;
-            padding: 2rem;
+            padding: 2rem var(--content-padding-mobile);
           }
 
           .footer-links-column {
