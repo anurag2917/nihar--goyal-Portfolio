@@ -20,9 +20,8 @@ const CTA = () => {
         <div className="cta-left">
 
           <h2 className="cta-title">
-            Got an idea<br/>
-            worth bringing<br/>
-            <span className="highlight">to life?</span>
+           Let's Build Your Next <br/>
+            <span className="highlight">Growth Engine</span>
           </h2>
 
 

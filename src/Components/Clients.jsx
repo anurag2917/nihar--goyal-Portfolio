@@ -8,8 +8,8 @@ const Clients = () => {
       <div className="w-full flex flex-col gap-12">
         <SectionHeader
           badge="Testimonials"
-          title1="Real feedback."
-          title2="Real impact."
+          title1="Trusted by Brands"
+          title2="That Expect More"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full items-stretch overflow-visible">

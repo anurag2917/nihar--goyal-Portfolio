@@ -170,10 +170,10 @@ const Hero = () => {
             >✕</button>
 
             {/* Brand mark in corner */}
-            <p style={{ fontFamily: '"Helvetica Neue", sans-serif', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.2em', color: '#444', textTransform: 'uppercase', marginBottom: '3rem' }}>
+            <p style={{ fontFamily: '"Inter", sans-serif', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.2em', color: '#444', textTransform: 'uppercase', marginBottom: '3rem' }}>
               NIHAR GOYAL <span style={{ color: '#ff5a00' }}>•</span>
             </p>
-
+ 
             {/* Nav links — staggered */}
             <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', width: '100%' }}>
               {navLinks.map((link, i) => {
@@ -188,7 +188,7 @@ const Hero = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.12 + i * 0.07, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
                     style={{
-                      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+                      fontFamily: '"Inter", sans-serif',
                       fontSize: 'clamp(2rem, 8vw, 3.2rem)',
                       fontWeight: 700,
                       color: isActive ? '#ff5a00' : '#0F0F0F',

@@ -31,8 +31,8 @@ const EmbedProject = () => {
         <div className="embed-header mb-[58px]">
           <SectionHeader
             badge="Work"
-            title1="Work that"
-            title2="performs."
+            title1="A Look Inside"
+            title2="Our Craft"
           />
         </div>
 

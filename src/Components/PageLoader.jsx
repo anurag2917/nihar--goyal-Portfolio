@@ -113,12 +113,12 @@ const PageLoader = ({ onComplete }) => {
 
             {/* Name — staggered letters */}
             <h1 style={{
-              fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+              fontFamily: '"Plus Jakarta Sans", sans-serif',
               fontSize: 'clamp(2.8rem, 7vw, 5.5rem)',
-              fontWeight: 700,
+              fontWeight: 800,
               color: '#0F0F0F',
               lineHeight: 1,
-              letterSpacing: '-0.02em',
+              letterSpacing: '-0.03em',
               overflow: 'hidden',
             }}>
               <LetterReveal text="Nihar" delay={0.25} />

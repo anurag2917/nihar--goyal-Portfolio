@@ -8,8 +8,8 @@ const CaseStudies = () => {
       <div className="flex flex-col gap-10">
         <SectionHeader
           badge="Case Studies"
-          title1="Work that"
-          title2="moves."
+          title1="Work That"
+          title2="Moved the Needle."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">

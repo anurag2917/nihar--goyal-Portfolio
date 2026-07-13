@@ -11,16 +11,16 @@ const About = () => {
         {/* Left Column */}
         <div className="flex-1 flex flex-col justify-center max-w-2xl">
           <m.div
-            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-baseline gap-[2px] mb-8"
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="flex items-center gap-2 mb-8"
           >
-            <span className="text-[11px] font-bold tracking-widest text-[#0F0F0F] uppercase">
+            <span className="text-[10px] font-bold tracking-widest text-[#ff5a00] uppercase">
               About Me
             </span>
-            <span className="text-[#ff5a00] text-xl leading-none">.</span>
+            <span className="text-[#ff5a00] text-lg leading-none -mt-1">•</span>
           </m.div>
 
           <m.div
@@ -135,7 +135,7 @@ const About = () => {
                 />
                 <text className="text-[11.5px] font-bold tracking-widest uppercase fill-current">
                   <textPath href="#textPath" startOffset="0%">
-                    VISUALS THAT CONNECT • VISUALS THAT CONNECT •
+                   • CREATE • SCALE • BUILD • DOMINATE •
                   </textPath>
                 </text>
               </m.svg>

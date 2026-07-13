@@ -66,17 +66,6 @@ export const projectsData = [
     aspectRatio: "3/4"
   },
   {
-    id: 7,
-    title: "3D CGI Project 1",
-    category: "3D & CGI",
-    description: "Burj Al Arab hot air balloon CGI.",
-    tools: ["Cinema 4D", "Redshift"],
-    embedUrl: "https://drive.google.com/file/d/1Y8Oc0ptCFyzgI8BMs5It4ubFcFVIjPSr/view?usp=sharing",
-    platformUrl: "https://drive.google.com/file/d/1Y8Oc0ptCFyzgI8BMs5It4ubFcFVIjPSr/view?usp=sharing",
-    videoUrl: "/assets/drive_3d_1.mp4",
-    aspectRatio: "3/4"
-  },
-  {
     id: 8,
     title: "3D CGI Project 2",
     category: "3D & CGI",
@@ -85,17 +74,6 @@ export const projectsData = [
     embedUrl: "https://drive.google.com/file/d/16aQWY6q1mHLnT0-C5Lrl6wju_GlPpq-S/view?usp=sharing",
     platformUrl: "https://drive.google.com/file/d/16aQWY6q1mHLnT0-C5Lrl6wju_GlPpq-S/view?usp=sharing",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/3d/drive_3d_2.mp4",
-    aspectRatio: "3/4"
-  },
-  {
-    id: 9,
-    title: "3D CGI Project 3",
-    category: "3D & CGI",
-    description: "High-fidelity 3D visual render.",
-    tools: ["Blender", "After Effects"],
-    embedUrl: "https://drive.google.com/file/d/1cw70dyVmBPqjxtBRU77_u4kPdom16AAP/view?usp=sharing",
-    platformUrl: "https://drive.google.com/file/d/1cw70dyVmBPqjxtBRU77_u4kPdom16AAP/view?usp=sharing",
-    videoUrl: "/assets/drive_3d_3.mp4",
     aspectRatio: "3/4"
   },
   {
