@@ -7,7 +7,7 @@ const CTA = () => {
     const data = Object.fromEntries(formData);
 
     const subject = `New Inquiry from ${data.name}`;
-    const body = `Name: ${data.name}\nEmail: ${data.email}`;
+    const body = `Name: ${data.name}\nEmail: ${data.email}\nProject Type: ${data.projectType}`;
 
     window.location.href = `mailto:hello@nihargoyal.com?subject=${encodeURIComponent(
       subject
@@ -31,14 +31,27 @@ const CTA = () => {
 
         <div className="cta-right">
            <form className="cta-form-card" onSubmit={handleSubmit}>
-              <div className="form-inputs">
-                 <div className="fi-group">
-                    <label htmlFor="cta-name">YOUR NAME</label>
-                    <input id="cta-name" type="text" name="name" className="fi-input" placeholder="John Doe" autoComplete="name" required />
+              <div className="form-inputs flex flex-col gap-6">
+                 <div className="flex flex-col md:flex-row gap-6 w-full">
+                    <div className="fi-group">
+                       <label htmlFor="cta-name">YOUR NAME</label>
+                       <input id="cta-name" type="text" name="name" className="fi-input" placeholder="John Doe" autoComplete="name" required />
+                    </div>
+                    <div className="fi-group">
+                       <label htmlFor="cta-email">EMAIL ADDRESS</label>
+                       <input id="cta-email" type="email" name="email" className="fi-input" placeholder="hello@example.com" autoComplete="email" required />
+                    </div>
                  </div>
-                 <div className="fi-group">
-                    <label htmlFor="cta-email">EMAIL ADDRESS</label>
-                    <input id="cta-email" type="email" name="email" className="fi-input" placeholder="hello@example.com" autoComplete="email" required />
+                 <div className="fi-group w-full">
+                    <label htmlFor="cta-project">PROJECT TYPE</label>
+                    <select id="cta-project" name="projectType" className="fi-input w-full" required defaultValue="">
+                       <option value="" disabled hidden>Select a service...</option>
+                       <option value="Branding & Strategy">Branding & Strategy</option>
+                       <option value="UI/UX & Web Design">UI/UX & Web Design</option>
+                       <option value="Automated Systems">Automated Systems</option>
+                       <option value="AI Integration">AI Integration</option>
+                       <option value="Other">Other</option>
+                    </select>
                  </div>
               </div>
 
@@ -104,6 +117,22 @@ const CTA = () => {
         }
         .fc-status .dot.green {
           animation: blinkDot 1.5s ease-in-out infinite;
+        }
+
+        select.fi-input {
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+          background-repeat: no-repeat;
+          background-position: right 1.25rem center;
+          background-size: 14px;
+          padding-right: 2.75rem;
+          cursor: pointer;
+        }
+        select.fi-input:invalid,
+        select.fi-input option[value=""] {
+          color: #888888;
         }
       `}} />
     </section>

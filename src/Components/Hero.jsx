@@ -169,9 +169,8 @@ const Hero = () => {
               }}
             >✕</button>
 
-            {/* Brand mark in corner */}
             <p style={{ fontFamily: '"Inter", sans-serif', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.2em', color: '#444', textTransform: 'uppercase', marginBottom: '3rem' }}>
-              NIHAR GOYAL <span style={{ color: '#ff5a00' }}>•</span>
+              NIHAR GOYAL <span style={{ color: '#ff5a00', display: 'inline-block', transform: 'translateY(-1px)' }}>•</span>
             </p>
  
             {/* Nav links — staggered */}
@@ -253,7 +252,7 @@ const Hero = () => {
               <span className="hero__title-nowrap">Your Growth</span><br />Story
             </h1>
             <p className="hero__subcopy">
-AI-powered creative systems that transform <br />how your brand is built,managed, and marketed.            </p>
+AI-powered creative systems that transform <br />how your brand is built, managed, and marketed.            </p>
             <div className="hero__cta-wrapper">
               <a href="#contact" onClick={(e) => handleNavClick(e, '#contact')} className="hero__cta">
                 <span className="hero__cta-text">Let's Connect</span>

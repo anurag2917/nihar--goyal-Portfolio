@@ -26,7 +26,7 @@ const Footer = () => {
         {/* Left Column (Brand) */}
         <div className="footer-brand-column">
           <div className="footer-logo">
-            NG<span className="footer-logo-dot">.</span>
+            NG<span className="footer-logo-dot"></span>
           </div>
           <p className="footer-copyright">
             © 2026 NiharGoyal – Automated Creative Systems.
@@ -171,7 +171,13 @@ const Footer = () => {
         }
 
         .footer-logo-dot {
-          color: #ff5a00;
+          display: inline-block;
+          width: 12px;
+          height: 12px;
+          background-color: #ff5a00;
+          border-radius: 50%;
+          margin-left: 6px;
+          vertical-align: baseline;
         }
 
         .footer-copyright {

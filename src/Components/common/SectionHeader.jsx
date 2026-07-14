@@ -15,7 +15,6 @@ const SectionHeader = ({ badge, title1, title2, desc, className = '' }) => {
         <span className="text-[10px] font-bold tracking-widest text-[#ff5a00] uppercase">
           {badge}
         </span>
-        <span className="text-[#ff5a00] text-lg leading-none -mt-1">•</span>
       </m.div>
 
       <m.h2
@@ -25,8 +24,8 @@ const SectionHeader = ({ badge, title1, title2, desc, className = '' }) => {
         transition={{ delay: 0.05, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         className="text-[clamp(3.4rem,4.25vw,4.25rem)] leading-[1.05] tracking-tight text-[#0F0F0F]"
       >
-        {title1 && <span className="block font-serif font-medium">{title1}</span>}
-        {title2 && <span className="block font-serif italic text-[#ff5a00]">{title2}</span>}
+        {title1 && <span className="block font-serif font-semibold">{title1}</span>}
+        {title2 && <span className="block font-serif italic font-semibold text-[#ff5a00]">{title2}</span>}
       </m.h2>
 
       {desc && (

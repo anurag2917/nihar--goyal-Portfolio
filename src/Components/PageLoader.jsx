@@ -7,7 +7,15 @@ import { AnimatePresence, motion } from 'framer-motion';
 const LetterReveal = ({ text, className, delay = 0 }) => {
   const letters = text.split('');
   return (
-    <span className={className} style={{ display: 'inline-block', overflow: 'hidden' }}>
+    <span
+      className={className}
+      style={{
+        display: 'inline-block',
+        overflow: 'hidden',
+        paddingBottom: '0.15em',
+        marginBottom: '-0.15em',
+      }}
+    >
       {letters.map((ch, i) => (
         <motion.span
           key={i}
@@ -34,31 +42,27 @@ const PageLoader = ({ onComplete }) => {
   const [progress, setProgress] = useState(0);
   const [phase, setPhase] = useState('enter'); // enter → fill → exit
 
-  /* Simulate loading progress */
+  /* Throttled loading progress simulation to reduce React rendering overhead (prevents animation lag) */
   useEffect(() => {
-    let raf;
-    let start = null;
     const duration = 2200; // ms for bar to reach 100%
+    const step = 50; // update state every 50ms instead of 16ms (60fps)
+    let elapsed = 0;
 
-    const tick = (ts) => {
-      if (!start) start = ts;
-      const elapsed = ts - start;
+    const timer = setInterval(() => {
+      elapsed += step;
       const pct = Math.min((elapsed / duration) * 100, 100);
       setProgress(pct);
 
-      if (pct < 100) {
-        raf = requestAnimationFrame(tick);
-      } else {
-        // Short pause at 100% then exit
+      if (pct >= 100) {
+        clearInterval(timer);
         setTimeout(() => {
           setPhase('exit');
           setTimeout(onComplete, 700);
         }, 350);
       }
-    };
+    }, step);
 
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
+    return () => clearInterval(timer);
   }, [onComplete]);
 
   return (
@@ -117,9 +121,10 @@ const PageLoader = ({ onComplete }) => {
               fontSize: 'clamp(2.8rem, 7vw, 5.5rem)',
               fontWeight: 800,
               color: '#0F0F0F',
-              lineHeight: 1,
+              lineHeight: 1.15,
               letterSpacing: '-0.03em',
               overflow: 'hidden',
+              paddingBottom: '0.05em',
             }}>
               <LetterReveal text="Nihar" delay={0.25} />
               {' '}
@@ -157,13 +162,14 @@ const PageLoader = ({ onComplete }) => {
               overflow: 'hidden',
             }}>
               {/* Fill */}
-              <motion.div
+              <div
                 style={{
                   height: '100%',
                   background: 'linear-gradient(90deg, #ff5a00, #ff8c42)',
                   borderRadius: 99,
                   width: `${progress}%`,
                   boxShadow: '0 0 12px rgba(255,90,0,0.6)',
+                  transition: 'width 0.05s linear',
                 }}
               />
             </div>
@@ -208,6 +214,7 @@ const PageLoader = ({ onComplete }) => {
                 borderLeft: pos.left !== undefined ? '1px solid rgba(255,90,0,0.4)' : 'none',
                 borderRight: pos.right !== undefined ? '1px solid rgba(255,90,0,0.4)' : 'none',
                 ...pos,
+                boxSizing: 'border-box',
               }}
             />
           ))}

@@ -205,7 +205,7 @@ html, body {
   background: #ff5a00;
   border-radius: 50%;
   display: inline-block;
-  margin-top: 2px;
+  margin-top: -1px;
 }
 
 .hero-landing__nav-right {
@@ -693,7 +693,7 @@ html, body {
     width: 100%;
   }
   .hero__col-right {
-    margin-top: -8px;
+    margin-top: 0;
   }
   .hero__content-group {
     align-items: center;
@@ -711,15 +711,19 @@ html, body {
   .hero__subcopy {
     font-size: clamp(0.95rem, 1.2vw + 0.65rem, 1rem);
     line-height: 1.75;
-    max-width: 280px;
+    max-width: 300px;
     margin-inline: auto;
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero__subcopy br {
+    display: none;
   }
   .hero__cta-wrapper {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 0.25rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
   }
   .hero__cta {
     width: auto;
@@ -732,7 +736,7 @@ html, body {
     position: relative;
     width: 300px;
     height: 220px;
-    margin: 0.5rem 0 -6px 0;
+    margin: 0.5rem 0 12px 0;
     border-radius: 18px;
     overflow: hidden;
     z-index: 5;
@@ -934,7 +938,7 @@ html, body {
   justify-content: center;
   gap: 0.35rem;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
-  opacity: 0.65;
+  opacity: 0.9;
 }
 
 .logo-card:hover {

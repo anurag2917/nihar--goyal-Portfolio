@@ -66,8 +66,8 @@ const Process = () => {
         <div className="absolute left-0 top-[4%] max-w-[28%] z-30">
           <SectionHeader
             badge="Process"
-            title1="Our Process."
-            title2=""
+            title1="Our"
+            title2="Process."
             desc="A clear, collaborative process designed to help your brand grow with confidence."
           />
         </div>
@@ -247,8 +247,8 @@ const Process = () => {
         <div>
           <SectionHeader
             badge="Process"
-            title1="Our Process."
-            title2=""
+            title1="Our"
+            title2="Process."
             desc="A streamlined, AI-enhanced workflow designed to execute your vision without draining your bandwidth."
           />
         </div>

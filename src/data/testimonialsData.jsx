@@ -1,9 +1,17 @@
+import sunilImage from '../assets/logos/sunil.png';
+import janeImage from '../assets/logos/jane.png';
+import chaisuttaLogo from '../assets/logos/chaisutta.png';
+import highontalesLogo from '../assets/logos/highontales.png';
+import airenLogo from '../assets/logos/airen.png';
+import kaffeelaLogo from '../assets/logos/kaffeela.png';
+
 export const testimonialsData = [
   {
     id: 1,
     name: "Raj Gyanee",
     role: "The Currencypedia",
     avatarColor: "bg-[#2563eb]",
+    avatarImage: sunilImage,
     quote: '"Working with Nihar felt like having a true creative partner rather than just an editor. From video editing and thumbnails to channel management, he consistently brought ideas that improved our content while making the entire workflow smooth and reliable."',
     project: "The Currencypedia",
     date: "Mar 12, 2024",
@@ -15,6 +23,7 @@ export const testimonialsData = [
     name: "Jane Gentry",
     role: "The CEO’s Unscripted Podcast",
     avatarColor: "bg-[#10b981]",
+    avatarImage: janeImage,
     quote: '"Professional, reliable, and easy to work with. Nihar consistently delivers quality work while making the entire process effortless."',
     project: "The CEO’s Unscripted Podcast",
     date: "Apr 05, 2024",
@@ -28,6 +37,8 @@ export const testimonialsData = [
     name: "Team Chai Sutta Bar",
     role: "Video Production",
     avatarColor: "bg-[#000]",
+    avatarImage: chaisuttaLogo,
+    isLogo: true,
     quote: '"Working with Nihar was a great experience because he consistently brought creative direction, fresh ideas, and a problem-solving mindset to every project. He naturally supported the team, raised the quality of our creative output, and was someone people could always rely on.”',
     project: "Chai Sutta Bar",
     date: "Mar 28, 2024",
@@ -41,6 +52,8 @@ export const testimonialsData = [
     name: "Ravish Bohare",
     role: "High On Tales",
     avatarColor: "bg-[#f59e0b]",
+    avatarImage: highontalesLogo,
+    isLogo: true,
     quote: '"What stood out most was Nihar\'s ability to deliver high-quality work under demanding timelines without compromising standards. His professionalism, ownership, and attention to detail consistently earned positive feedback from our clients.”',
     project: "High On Tales",
     date: "Apr 18, 2024",
@@ -52,6 +65,8 @@ export const testimonialsData = [
     name: "Team Airen Group",
     role: "Airen Group",
     avatarColor: "bg-[#8b5cf6]",
+    avatarImage: airenLogo,
+    isLogo: true,
     quote: '"Nihar brought fresh creative thinking to our campaigns and understood how to translate ideas into engaging visual content. He was always open to feedback, proactive with suggestions, and committed to making every campaign stronger.”',
     project: "Airen Group",
     date: "May 02, 2024",
@@ -63,6 +78,8 @@ export const testimonialsData = [
     name: "Apni Rasoi(Cafe Chain)",
     role: "Apni Rasoi(Cafe Chain)",
     avatarColor: "bg-[#10b981]",
+    avatarImage: kaffeelaLogo,
+    isLogo: true,
     quote: '"Nihar helped us create content that truly reflected our brand\'s personality. His creativity, understanding of audience attention, and willingness to experiment made every reel feel unique and impactful.”',
     project: "Apni Rasoi(Cafe Chain)",
     isWhatsAppDate: true,

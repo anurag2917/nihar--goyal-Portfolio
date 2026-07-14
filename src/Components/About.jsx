@@ -20,7 +20,6 @@ const About = () => {
             <span className="text-[10px] font-bold tracking-widest text-[#ff5a00] uppercase">
               About Me
             </span>
-            <span className="text-[#ff5a00] text-lg leading-none -mt-1">•</span>
           </m.div>
 
           <m.div
@@ -31,8 +30,8 @@ const About = () => {
             className="relative mb-8"
           >
             <h2 className="text-[2rem] sm:text-[2.5rem] md:text-[3.8rem] leading-[1.08] text-[#0F0F0F] tracking-tight">
-              <span className="block font-serif font-medium">Creative Direction</span>
-              <span className="block font-serif font-medium">built for <span className="italic text-[#ff5a00]">business growth.</span></span>
+              <span className="block font-serif font-semibold">Creative Direction</span>
+              <span className="block font-serif font-semibold">built for <span className="italic text-[#ff5a00]">business growth.</span></span>
             </h2>
           </m.div>
 
@@ -135,7 +134,7 @@ const About = () => {
                 />
                 <text className="text-[11.5px] font-bold tracking-widest uppercase fill-current">
                   <textPath href="#textPath" startOffset="0%">
-                   • CREATE • SCALE • BUILD • DOMINATE •
+                    •   CREATE • SCALE • BUILD • DOMINATE  •
                   </textPath>
                 </text>
               </m.svg>

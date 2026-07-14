@@ -7,6 +7,8 @@ const TestimonialCard = memo(({ testimonial }) => {
     role,
     avatarColor,
     avatarText,
+    avatarImage,
+    isLogo,
     quote,
     project,
     date,
@@ -34,9 +36,13 @@ const TestimonialCard = memo(({ testimonial }) => {
       <div className="flex justify-between items-start mb-6">
         <div className="flex items-center gap-3">
           <div
-            className={`w-10 h-10 rounded-full flex-shrink-0 ${avatarColor} flex items-center justify-center text-white text-[10px] font-bold`}
+            className={`w-10 h-10 rounded-full flex-shrink-0 ${avatarImage ? 'bg-gray-50 border border-gray-100 overflow-hidden' : avatarColor} flex items-center justify-center text-white text-[10px] font-bold ${avatarImage && isLogo ? 'p-1.5' : ''}`}
           >
-            {initials}
+            {avatarImage ? (
+              <img src={avatarImage} alt={name} className={`w-full h-full ${isLogo ? 'object-contain' : 'object-cover'}`} />
+            ) : (
+              initials
+            )}
           </div>
           <div>
             <h3 className="font-bold text-[#0F0F0F] text-sm">{name}</h3>
