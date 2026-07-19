@@ -1,10 +1,14 @@
 import SectionHeader from './common/SectionHeader';
 import TestimonialCard from './clients/TestimonialCard';
+import FloatingTestimonialWall from './clients/FloatingTestimonialWall';
 import { testimonialsData } from '../data/testimonialsData';
 
 const Clients = () => {
   return (
-    <section className="relative w-full py-[60px] md:py-[100px] overflow-visible font-sans" id="clients">
+    <section
+      className="relative w-full pt-[60px] pb-[60px] md:pt-[100px] md:pb-[100px] lg:pb-[50px] overflow-visible font-sans"
+      id="clients"
+    >
       <div className="w-full flex flex-col gap-12">
         <SectionHeader
           badge="Testimonials"
@@ -12,7 +16,13 @@ const Clients = () => {
           title2="That Expect More"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full items-stretch overflow-visible">
+        {/* ── DESKTOP: premium floating wall (hidden on mobile) ── */}
+        <div className="hidden lg:block">
+          <FloatingTestimonialWall />
+        </div>
+
+        {/* ── MOBILE / TABLET: original grid (hidden on desktop) ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:hidden gap-8 w-full items-stretch overflow-visible">
           {testimonialsData.map((testimonial) => (
             <TestimonialCard key={testimonial.id} testimonial={testimonial} />
           ))}

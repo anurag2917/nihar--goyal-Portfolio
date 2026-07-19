@@ -39,7 +39,7 @@ const TestimonialCard = memo(({ testimonial }) => {
             className={`w-10 h-10 rounded-full flex-shrink-0 ${avatarImage ? 'bg-gray-50 border border-gray-100 overflow-hidden' : avatarColor} flex items-center justify-center text-white text-[10px] font-bold ${avatarImage && isLogo ? 'p-1.5' : ''}`}
           >
             {avatarImage ? (
-              <img src={avatarImage} alt={name} className={`w-full h-full ${isLogo ? 'object-contain' : 'object-cover'}`} />
+              <img src={avatarImage} alt={name} loading="lazy" decoding="async" className={`w-full h-full ${isLogo ? 'object-contain' : 'object-cover'}`} />
             ) : (
               initials
             )}

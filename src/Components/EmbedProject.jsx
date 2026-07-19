@@ -8,13 +8,16 @@ import SectionHeader from './common/SectionHeader';
 const EmbedProject = () => {
   const [activeFilter, setActiveFilter] = useState('All');
 
-  // Select 6 random cards from the entire pool of projects once when the component mounts
+  // Select 6 random cards from the pool of projects (excluding Podcast and YouTube Video) once when the component mounts
   const allSectionProjects = useMemo(() => {
+    const eligibleProjects = projectsData.filter(
+      (p) => p.category !== 'Podcast' && p.category !== 'YouTube Video'
+    );
     const getRandom = (arr, count) => {
       const shuffled = [...arr].sort(() => 0.5 - Math.random());
       return shuffled.slice(0, count);
     };
-    return getRandom(projectsData, 6);
+    return getRandom(eligibleProjects, 6);
   }, []);
 
   const filteredProjects = useMemo(() => {

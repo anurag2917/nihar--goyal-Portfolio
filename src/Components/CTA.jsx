@@ -15,7 +15,7 @@ const CTA = () => {
   }, []);
 
   return (
-    <section className="cta-section py-[60px] md:py-[100px]" id="contact" style={{ position: 'relative', zIndex: 12 }}>
+    <section className="cta-section pt-[60px] pb-[60px] md:pt-[100px] md:pb-[100px] lg:pt-[70px]" id="contact" style={{ position: 'relative', zIndex: 12 }}>
       <div className="cta-top-content">
         <div className="cta-left">
 

@@ -43,6 +43,7 @@ const VideoModal = memo(({ activeVideo, onClose }) => {
               src={activeVideo.embedUrl}
               title={activeVideo.title}
               frameBorder="0"
+              loading="lazy"
               allow="autoplay; fullscreen; picture-in-picture"
               allowFullScreen
             ></iframe>

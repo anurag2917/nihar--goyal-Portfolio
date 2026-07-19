@@ -251,7 +251,139 @@ export const projectsData = [
     platformUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/creator%20reels/Video-735.mp4",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/creator%20reels/Video-735.mp4",
     aspectRatio: "3/4"
+  },
+  {
+    id: 26,
+    title: "Podcast Episode #01 — Unscripted Conversation",
+    category: "Podcast",
+    description: "Full-length multi-cam podcast edit with high-retention cuts.",
+    tools: ["Premiere Pro", "Multi-cam Edit", "Audio Sync"],
+    embedUrl: "https://youtu.be/EF5y2IjT1WU",
+    platformUrl: "https://youtu.be/EF5y2IjT1WU",
+    videoUrl: "https://youtu.be/EF5y2IjT1WU",
+    aspectRatio: "16/9",
+    isYouTube: true
+  },
+  {
+    id: 27,
+    title: "Podcast Episode #02 — Deep Dive Strategy",
+    category: "Podcast",
+    description: "Engaging podcast conversation with dynamic b-roll and pacing.",
+    tools: ["DaVinci Resolve", "Sound Design"],
+    embedUrl: "https://youtu.be/m6ny7fSeUOg",
+    platformUrl: "https://youtu.be/m6ny7fSeUOg",
+    videoUrl: "https://youtu.be/m6ny7fSeUOg",
+    aspectRatio: "16/9",
+    isYouTube: true
+  },
+  {
+    id: 30,
+    title: "Podcast Episode #03 — Founder's Story",
+    category: "Podcast",
+    description: "High-energy podcast interview breakdown and narrative structure.",
+    tools: ["Premiere Pro", "Color Grading"],
+    embedUrl: "https://youtu.be/K4ngLYCMDXU",
+    platformUrl: "https://youtu.be/K4ngLYCMDXU",
+    videoUrl: "https://youtu.be/K4ngLYCMDXU",
+    aspectRatio: "16/9",
+    isYouTube: true
+  },
+  {
+    id: 31,
+    title: "Podcast Episode #04 — Growth & Scaling",
+    category: "Podcast",
+    description: "Strategic founder conversation with clean multi-angle cuts.",
+    tools: ["After Effects", "Audio Mixing"],
+    embedUrl: "https://youtu.be/95lJmArcBC0",
+    platformUrl: "https://youtu.be/95lJmArcBC0",
+    videoUrl: "https://youtu.be/95lJmArcBC0",
+    aspectRatio: "16/9",
+    isYouTube: true
+  },
+  {
+    id: 32,
+    title: "Podcast Episode #05 — Creative Direction",
+    category: "Podcast",
+    description: "In-depth creative discussion with polished micro-interactions.",
+    tools: ["Premiere Pro", "Sound Engineering"],
+    embedUrl: "https://youtu.be/skzRMUB_D0A",
+    platformUrl: "https://youtu.be/skzRMUB_D0A",
+    videoUrl: "https://youtu.be/skzRMUB_D0A",
+    aspectRatio: "16/9",
+    isYouTube: true
+  },
+  {
+    id: 33,
+    title: "YouTube Video Breakdown #01 — Tech & Strategy",
+    category: "YouTube Video",
+    description: "High-paced YouTube tech and strategy breakdown with color grading and VFX.",
+    tools: ["After Effects", "Premiere Pro", "Color Grading"],
+    embedUrl: "https://youtu.be/GChQaQBQPM8",
+    platformUrl: "https://youtu.be/GChQaQBQPM8",
+    videoUrl: "https://youtu.be/GChQaQBQPM8",
+    aspectRatio: "16/9",
+    isYouTube: true
+  },
+  {
+    id: 34,
+    title: "YouTube Video Breakdown #02 — Documentary Essay",
+    category: "YouTube Video",
+    description: "Long-form YouTube video essay with custom map animations and pacing.",
+    tools: ["After Effects", "Sound Mixing", "Motion Graphics"],
+    embedUrl: "https://youtu.be/KiBTtk76fX4",
+    platformUrl: "https://youtu.be/KiBTtk76fX4",
+    videoUrl: "https://youtu.be/KiBTtk76fX4",
+    aspectRatio: "16/9",
+    isYouTube: true
+  },
+  {
+    id: 35,
+    title: "YouTube Video Breakdown #03 — Cinematic B-Roll",
+    category: "YouTube Video",
+    description: "Cinematic b-roll sequence featuring sound design and visual transitions.",
+    tools: ["DaVinci Resolve", "Sound Design", "VFX"],
+    embedUrl: "https://youtu.be/dc_WmdsXoTo",
+    platformUrl: "https://youtu.be/dc_WmdsXoTo",
+    videoUrl: "https://youtu.be/dc_WmdsXoTo",
+    aspectRatio: "16/9",
+    isYouTube: true
+  },
+  {
+    id: 36,
+    title: "YouTube Video Breakdown #04 — Storytelling & Pacing",
+    category: "YouTube Video",
+    description: "Deep dive narrative structure and high-retention visual editing.",
+    tools: ["Premiere Pro", "Pacing & Cut", "Audio Sync"],
+    embedUrl: "https://youtu.be/kUAFTnEXGBg",
+    platformUrl: "https://youtu.be/kUAFTnEXGBg",
+    videoUrl: "https://youtu.be/kUAFTnEXGBg",
+    aspectRatio: "16/9",
+    isYouTube: true
+  },
+  {
+    id: 37,
+    title: "YouTube Video Breakdown #05 — VFX & Motion Design",
+    category: "YouTube Video",
+    description: "Dynamic visual effects integration and custom title animations.",
+    tools: ["After Effects", "Cinema 4D", "VFX"],
+    embedUrl: "https://youtu.be/5_MMok6GS0E",
+    platformUrl: "https://youtu.be/5_MMok6GS0E",
+    videoUrl: "https://youtu.be/5_MMok6GS0E",
+    aspectRatio: "16/9",
+    isYouTube: true
+  },
+  {
+    id: 38,
+    title: "YouTube Video Breakdown #06 — High Retention Edit",
+    category: "YouTube Video",
+    description: "Engaging creator edit with dynamic subtitles, zoom cuts, and SFX.",
+    tools: ["Premiere Pro", "CapCut Pro", "SFX"],
+    embedUrl: "https://youtu.be/jM6fzY18U2o",
+    platformUrl: "https://youtu.be/jM6fzY18U2o",
+    videoUrl: "https://youtu.be/jM6fzY18U2o",
+    aspectRatio: "16/9",
+    isYouTube: true
   }
 ];
 
-export const projectFilters = ["All", "Motion Design", "3D & CGI", "Ad Creative", "Creator Reels"];
+export const projectFilters = ["All", "Motion Design", "3D & CGI", "Ad Creative", "Creator Reels", "Podcast", "YouTube Video"];

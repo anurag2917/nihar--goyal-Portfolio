@@ -229,6 +229,7 @@ const Hero = () => {
           src="/assets/nihar-hero-uploaded-clean.png"
           alt="Nihar Goyal - Automated Creative Systems & Creative Direction"
           className="hero__portrait-img"
+          loading="eager"
           fetchPriority="high"
           decoding="async"
           width="400"
