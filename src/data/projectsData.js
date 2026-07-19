@@ -313,6 +313,18 @@ export const projectsData = [
     isYouTube: true
   },
   {
+    id: 39,
+    title: "Podcast Episode #06 — One-Slide Strategy",
+    category: "Podcast",
+    description: "Jamie Church, CEO of Best Buy Medical, shares how his entire company strategy fits on a single slide.",
+    tools: ["Premiere Pro", "Multi-cam Edit", "Color Grading"],
+    embedUrl: "https://youtu.be/2TRUl47SPAk",
+    platformUrl: "https://youtu.be/2TRUl47SPAk",
+    videoUrl: "https://youtu.be/2TRUl47SPAk",
+    aspectRatio: "16/9",
+    isYouTube: true
+  },
+  {
     id: 33,
     title: "YouTube Video Breakdown #01 — Tech & Strategy",
     category: "YouTube Video",

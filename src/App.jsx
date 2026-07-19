@@ -6,8 +6,9 @@ import './index.css'
 import ScrollReveal from './Components/ScrollReveal'
 import { ReactLenis } from 'lenis/react'
 import 'lenis/dist/lenis.css'
-import { LazyMotion, domMax } from 'framer-motion'
+import { LazyMotion, domMax, AnimatePresence } from 'framer-motion'
 import PageLoader from './Components/PageLoader'
+import PrivacyPolicyModal from './Components/PrivacyPolicyModal'
 
 import LoadingFallback from './Components/common/LoadingFallback'
 
@@ -20,6 +21,7 @@ const Footer = lazy(() => import('./Components/Footer'))
 
 function App() {
   const [loading, setLoading] = useState(true)
+  const [showPrivacy, setShowPrivacy] = useState(false)
   const handleLoaderComplete = useCallback(() => setLoading(false), [])
 
   return (
@@ -77,9 +79,18 @@ function App() {
           <Suspense fallback={null}>
             {/* Footer — simple fade in from below */}
             <ScrollReveal variant="fade-up" duration={0.7} margin="-20px">
-              <Footer />
+              <Footer onPrivacyClick={() => setShowPrivacy(true)} />
             </ScrollReveal>
           </Suspense>
+          
+          <AnimatePresence>
+            {showPrivacy && (
+              <PrivacyPolicyModal
+                isOpen={showPrivacy}
+                onClose={() => setShowPrivacy(false)}
+              />
+            )}
+          </AnimatePresence>
         </div>
       </LazyMotion>
     </ReactLenis>

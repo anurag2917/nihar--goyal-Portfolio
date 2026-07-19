@@ -4,6 +4,7 @@ import chaisuttaLogo from '../assets/logos/chaisutta.png';
 import highontalesLogo from '../assets/logos/highontales.png';
 import airenLogo from '../assets/logos/airen.png';
 import kaffeelaLogo from '../assets/logos/kaffeela.png';
+import stellaspireLogo from '../assets/logos/stellaspire.png';
 
 export const testimonialsData = [
   {
@@ -85,5 +86,31 @@ export const testimonialsData = [
     isWhatsAppDate: true,
     badgeType: "whatsapp",
     delay: 0.3,
+  },
+  {
+    id: 7,
+    name: "Anubhav",
+    role: "Content Collaboration",
+    avatarColor: "bg-[#2563eb]",
+    avatarImage: null,
+    isLogo: false,
+    quote: '"Nihar has been incredibly consistent throughout our collaboration. His speed, editing expertise, and ability to understand the brief with minimal back-and-forth made him someone we could always depend on for high-quality content.”',
+    project: "Content Collaboration",
+    date: "Jun 14, 2024",
+    badgeType: "quote",
+    delay: 0.1,
+  },
+  {
+    id: 8,
+    name: "Nikita Agrawal",
+    role: "Stellaspire",
+    avatarColor: "bg-[#10b981]",
+    avatarImage: stellaspireLogo,
+    isLogo: true,
+    quote: '"Nihar has an excellent understanding of what makes short-form content engaging. Beyond delivering great edits, he contributed creative ideas, adapted quickly to feedback, and was always invested in helping us achieve better results.”',
+    project: "Stellaspire",
+    date: "Jul 01, 2024",
+    badgeType: "approved",
+    delay: 0.2,
   },
 ];

@@ -8,6 +8,7 @@ import chaisuttaLogo from '../../assets/logos/chaisutta.png';
 import highontalesLogo from '../../assets/logos/highontales.png';
 import airenLogo from '../../assets/logos/airen.png';
 import kaffeelaLogo from '../../assets/logos/kaffeela.png';
+import stellaspireLogo from '../../assets/logos/stellaspire.png';
 
 /* ─── 100% Authentic Website Testimonials Data matching 3-Row Clustered Layout ─── */
 const CARDS = [
@@ -117,13 +118,13 @@ const CARDS = [
   /* ROW 2: CENTER (THE FEATURED ANCHOR CARD — using Chai Sutta Bar Soundbite) */
   {
     id: 5,
-    name: 'Team Chai Sutta Bar',
-    role: 'Creative Direction & Production',
+    name: 'Nikita Agrawal',
+    role: 'Stellaspire',
     avatarColor: '#27272A',
-    avatarImage: chaisuttaLogo,
+    avatarImage: stellaspireLogo,
     isLogo: true,
-    quote: 'He naturally supported our team and raised the quality of our creative output.',
-    highlight: 'Someone people could always rely on.',
+    quote: 'Nihar has an excellent understanding of what makes short-form content engaging. Beyond delivering great edits, he contributed creative ideas, adapted quickly to feedback,',
+    highlight: 'and was always invested in helping us achieve better results.',
     theme: 'dark',
     quoteMark: true,
     stars: null,
@@ -191,14 +192,14 @@ const CARDS = [
   /* ROW 3: CENTER-RIGHT (Pull-quote from Raj Gyanee Currencypedia) */
   {
     id: 8,
-    name: 'Raj Gyanee',
-    role: 'Workflow & Strategy Partner',
+    name: 'Anubhav',
+    role: 'Content Collaboration',
     avatarColor: '#10B981',
-    avatarImage: sunilImage,
+    avatarImage: null,
     isLogo: false,
     quote:
-      'From channel management to high-retention editing, every interaction is streamlined and polished.',
-    highlight: 'Making the entire workflow smooth and reliable.',
+      'Nihar has been incredibly consistent throughout our collaboration. His speed, editing expertise, and ability to understand the brief with minimal back-and-forth',
+    highlight: 'made him someone we could always depend on for high-quality content.',
     theme: 'green',
     quoteMark: true,
     stars: null,

@@ -1,6 +1,6 @@
 import { navLinks, socialLinks } from '../data/navigationData';
 
-const Footer = () => {
+const Footer = ({ onPrivacyClick }) => {
   return (
     <footer className="footer-section">
       {/* Top CTA Section (The Action Card) */}
@@ -44,7 +44,16 @@ const Footer = () => {
               ))}
             </div>
             <div className="footer-links-row">
-              <a href="#privacy" className="footer-link">Privacy Policy</a>
+              <a
+                href="#privacy"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (onPrivacyClick) onPrivacyClick();
+                }}
+                className="footer-link"
+              >
+                Privacy Policy
+              </a>
             </div>
           </div>
           <div className="footer-socials-row">
