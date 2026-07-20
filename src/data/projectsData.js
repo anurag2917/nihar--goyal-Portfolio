@@ -8,7 +8,7 @@ export const projectsData = [
     embedUrl: "https://www.instagram.com/reel/Cw0HRnCsGZv/",
     platformUrl: "https://www.instagram.com/reel/Cw0HRnCsGZv/",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/Motion%20Desgin/reel_cw0.mp4",
-    aspectRatio: "3/4"
+    aspectRatio: "9/16"
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ export const projectsData = [
     embedUrl: "https://www.instagram.com/reel/CiMi5iHDAoL/",
     platformUrl: "https://www.instagram.com/reel/CiMi5iHDAoL/",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/Motion%20Desgin/reel_video.mp4",
-    aspectRatio: "3/4"
+    aspectRatio: "9/16"
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ export const projectsData = [
     embedUrl: "https://www.instagram.com/reel/DIEqa14I1cp/",
     platformUrl: "https://www.instagram.com/reel/DIEqa14I1cp/",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/Motion%20Desgin/reel_die.mp4",
-    aspectRatio: "3/4"
+    aspectRatio: "9/16"
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ export const projectsData = [
     embedUrl: "https://www.instagram.com/reel/Ch9FdvKjpEg/",
     platformUrl: "https://www.instagram.com/reel/Ch9FdvKjpEg/",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/Motion%20Desgin/reel_ch9.mp4",
-    aspectRatio: "3/4"
+    aspectRatio: "9/16"
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ export const projectsData = [
     embedUrl: "https://www.instagram.com/reel/DGC7PbPpQZu/",
     platformUrl: "https://www.instagram.com/reel/DGC7PbPpQZu/",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/Motion%20Desgin/reel_dgc.mp4",
-    aspectRatio: "3/4"
+    aspectRatio: "9/16"
   },
   {
     id: 6,
@@ -63,7 +63,7 @@ export const projectsData = [
     embedUrl: "https://drive.google.com/file/d/1MRhRwSe5KmG_JEiaCiP7BpzUL1JunYTx/view?usp=sharing",
     platformUrl: "https://drive.google.com/file/d/1MRhRwSe5KmG_JEiaCiP7BpzUL1JunYTx/view?usp=sharing",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/Motion%20Desgin/drive_motion.mp4",
-    aspectRatio: "3/4"
+    aspectRatio: "9/16"
   },
   {
     id: 8,
@@ -74,7 +74,7 @@ export const projectsData = [
     embedUrl: "https://drive.google.com/file/d/16aQWY6q1mHLnT0-C5Lrl6wju_GlPpq-S/view?usp=sharing",
     platformUrl: "https://drive.google.com/file/d/16aQWY6q1mHLnT0-C5Lrl6wju_GlPpq-S/view?usp=sharing",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/3d/drive_3d_2.mp4",
-    aspectRatio: "3/4"
+    aspectRatio: "9/16"
   },
   {
     id: 10,
@@ -85,7 +85,7 @@ export const projectsData = [
     embedUrl: "https://drive.google.com/file/d/17EmG7m3UVXdMkumJ63bo-6TDjvlv8oke/view?usp=sharing",
     platformUrl: "https://drive.google.com/file/d/17EmG7m3UVXdMkumJ63bo-6TDjvlv8oke/view?usp=sharing",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/3d/drive_3d_4.mp4",
-    aspectRatio: "3/4"
+    aspectRatio: "9/16"
   },
   {
     id: 11,
@@ -96,7 +96,7 @@ export const projectsData = [
     embedUrl: "https://drive.google.com/file/d/1YTRUz6oUXm40xlTkFb8q-uPmrDJL7zUn/view?usp=sharing",
     platformUrl: "https://drive.google.com/file/d/1YTRUz6oUXm40xlTkFb8q-uPmrDJL7zUn/view?usp=sharing",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/3d/drive_3d_5.mp4",
-    aspectRatio: "3/4"
+    aspectRatio: "9/16"
   },
   {
     id: 12,
@@ -107,7 +107,7 @@ export const projectsData = [
     embedUrl: "https://drive.google.com/file/d/1who6338-zX8Kaad-4GFqOskqTYUen1XT/view?usp=sharing",
     platformUrl: "https://drive.google.com/file/d/1who6338-zX8Kaad-4GFqOskqTYUen1XT/view?usp=sharing",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/3d/drive_3d_6.mp4",
-    aspectRatio: "3/4"
+    aspectRatio: "9/16"
   },
   {
     id: 13,
@@ -118,7 +118,7 @@ export const projectsData = [
     embedUrl: "https://www.instagram.com/reel/C6RBFaKsfNa/",
     platformUrl: "https://www.instagram.com/reel/C6RBFaKsfNa/",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/3d/reel_3d_7.mp4",
-    aspectRatio: "3/4"
+    aspectRatio: "9/16"
   },
   {
     id: 14,
@@ -129,7 +129,7 @@ export const projectsData = [
     embedUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/Brands%20reel/Video-103.mp4",
     platformUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/Brands%20reel/Video-103.mp4",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/Brands%20reel/Video-103.mp4",
-    aspectRatio: "3/4"
+    aspectRatio: "9/16"
   },
   {
     id: 15,
@@ -140,7 +140,7 @@ export const projectsData = [
     embedUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/Brands%20reel/Video-115.mp4",
     platformUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/Brands%20reel/Video-115.mp4",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/Brands%20reel/Video-115.mp4",
-    aspectRatio: "3/4"
+    aspectRatio: "9/16"
   },
   {
     id: 16,
@@ -151,7 +151,7 @@ export const projectsData = [
     embedUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/Brands%20reel/Video-208.mp4",
     platformUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/Brands%20reel/Video-208.mp4",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/Brands%20reel/Video-208.mp4",
-    aspectRatio: "3/4"
+    aspectRatio: "9/16"
   },
   {
     id: 17,
@@ -162,7 +162,7 @@ export const projectsData = [
     embedUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/Brands%20reel/Video-310.mp4",
     platformUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/Brands%20reel/Video-310.mp4",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/Brands%20reel/Video-310.mp4",
-    aspectRatio: "3/4"
+    aspectRatio: "9/16"
   },
   {
     id: 18,
@@ -173,7 +173,7 @@ export const projectsData = [
     embedUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/Brands%20reel/Video-437.mp4",
     platformUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/Brands%20reel/Video-437.mp4",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/Brands%20reel/Video-437.mp4",
-    aspectRatio: "3/4"
+    aspectRatio: "9/16"
   },
   {
     id: 19,
@@ -184,7 +184,7 @@ export const projectsData = [
     embedUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/Brands%20reel/Video-918.mp4",
     platformUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/Brands%20reel/Video-918.mp4",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/Brands%20reel/Video-918.mp4",
-    aspectRatio: "3/4"
+    aspectRatio: "9/16"
   },
   {
     id: 20,
@@ -195,7 +195,7 @@ export const projectsData = [
     embedUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/creator%20reels/Video-124.mp4",
     platformUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/creator%20reels/Video-124.mp4",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/creator%20reels/Video-124.mp4",
-    aspectRatio: "3/4"
+    aspectRatio: "9/16"
   },
   {
     id: 21,
@@ -206,7 +206,7 @@ export const projectsData = [
     embedUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/creator%20reels/Video-157.mp4",
     platformUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/creator%20reels/Video-157.mp4",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/creator%20reels/Video-157.mp4",
-    aspectRatio: "3/4"
+    aspectRatio: "9/16"
   },
   {
     id: 22,
@@ -217,7 +217,7 @@ export const projectsData = [
     embedUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/creator%20reels/Video-289.mp4",
     platformUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/creator%20reels/Video-289.mp4",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/creator%20reels/Video-289.mp4",
-    aspectRatio: "3/4"
+    aspectRatio: "9/16"
   },
   {
     id: 23,
@@ -228,7 +228,7 @@ export const projectsData = [
     embedUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/creator%20reels/Video-516.mp4",
     platformUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/creator%20reels/Video-516.mp4",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/creator%20reels/Video-516.mp4",
-    aspectRatio: "3/4"
+    aspectRatio: "9/16"
   },
   {
     id: 24,
@@ -239,7 +239,7 @@ export const projectsData = [
     embedUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/creator%20reels/Video-683.mp4",
     platformUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/creator%20reels/Video-683.mp4",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/creator%20reels/Video-683.mp4",
-    aspectRatio: "3/4"
+    aspectRatio: "9/16"
   },
   {
     id: 25,
@@ -250,7 +250,7 @@ export const projectsData = [
     embedUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/creator%20reels/Video-735.mp4",
     platformUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/creator%20reels/Video-735.mp4",
     videoUrl: "https://pub-95b14e5e52ff4371b9e5ad34519619a8.r2.dev/creator%20reels/Video-735.mp4",
-    aspectRatio: "3/4"
+    aspectRatio: "9/16"
   },
   {
     id: 26,

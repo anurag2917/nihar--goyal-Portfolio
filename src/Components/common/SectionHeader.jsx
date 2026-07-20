@@ -4,15 +4,14 @@ const SectionHeader = ({ badge, title1, title2, desc, className = '' }) => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div className={`flex flex-col gap-6 ${className}`}>
+    <div className={`flex flex-col gap-3 ${className}`}>
       <m.div
         initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="flex items-center gap-2"
       >
-        <span className="text-[10px] font-bold tracking-widest text-[#ff5a00] uppercase">
+        <span className="font-['Inter'] text-[14px] font-semibold tracking-[0.1em] uppercase text-[#ff5a00]">
           {badge}
         </span>
       </m.div>
@@ -22,10 +21,19 @@ const SectionHeader = ({ badge, title1, title2, desc, className = '' }) => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.05, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="text-[clamp(3.4rem,4.25vw,4.25rem)] leading-[1.05] tracking-tight text-[#0F0F0F]"
+        className="text-[2rem] sm:text-[2.5rem] md:text-[3.8rem] leading-[1.12] tracking-tight"
       >
-        {title1 && <span className="block font-serif font-semibold">{title1}</span>}
-        {title2 && <span className="block font-serif italic font-semibold text-[#ff5a00]">{title2}</span>}
+        {title1 && (
+          <span className="block font-serif font-semibold text-[#0F0F0F]">
+            {title1}
+          </span>
+        )}
+
+        {title2 && (
+          <span className="block font-serif font-semibold italic text-[#ff5a00]">
+            {title2}
+          </span>
+        )}
       </m.h2>
 
       {desc && (

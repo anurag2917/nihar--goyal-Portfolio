@@ -33,7 +33,7 @@ const CARDS = [
     pill: null,
     featured: false,
     style: {
-      left: '1%',
+      left: '0%',
       top: '0px',
       rotate: -3,
       width: '320px',
@@ -58,7 +58,7 @@ const CARDS = [
     pill: null,
     featured: false,
     style: {
-      left: '33.5%',
+      left: '35%',
       top: '-18px',
       rotate: 2,
       width: '330px',
@@ -83,7 +83,7 @@ const CARDS = [
     pill: { emoji: '🚀', label: 'Final Approved', type: 'orange' },
     featured: false,
     style: {
-      left: '67%',
+      left: '71%',
       top: '12px',
       rotate: -2,
       width: '330px',
@@ -108,7 +108,7 @@ const CARDS = [
     pill: null,
     featured: false,
     style: {
-      left: '2.5%',
+      left: '1%',
       top: '255px',
       rotate: -1.5,
       width: '315px',
@@ -132,7 +132,7 @@ const CARDS = [
     pill: { emoji: '✨', label: null, type: 'dark' },
     featured: true,
     style: {
-      left: '34.5%',
+      left: '36%',
       top: '240px',
       rotate: -1,
       width: '340px',
@@ -157,7 +157,7 @@ const CARDS = [
     pill: null,
     featured: false,
     style: {
-      left: '68%',
+      left: '72%',
       top: '268px',
       rotate: 1.5,
       width: '325px',
@@ -170,8 +170,8 @@ const CARDS = [
     name: 'Apni Rasoi (Cafe Chain)',
     role: 'Brand Content & Reels',
     avatarColor: '#F59E0B',
-    avatarImage: kaffeelaLogo,
-    isLogo: true,
+    avatarImage: null,
+    isLogo: false,
     quote:
       'Nihar helped us create content that truly reflected our brand\'s personality. His creativity and willingness to experiment made every reel feel unique and impactful.',
     highlight: null,
@@ -182,7 +182,7 @@ const CARDS = [
     pill: { emoji: '💬', label: 'Verified WhatsApp Check ✓✓', type: 'amber' },
     featured: false,
     style: {
-      left: '17%',
+      left: '12%',
       top: '530px',
       rotate: 2,
       width: '330px',
@@ -207,7 +207,7 @@ const CARDS = [
     pill: { emoji: '🔥', label: 'Highly Recommended', type: 'green' },
     featured: false,
     style: {
-      left: '52%',
+      left: '56%',
       top: '545px',
       rotate: -2.5,
       width: '330px',

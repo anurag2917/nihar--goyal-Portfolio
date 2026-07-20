@@ -29,11 +29,17 @@ const EmbedProject = () => {
 
   return (
     <section className="embed-work-section py-[60px] md:py-[100px]" id="work" style={{ position: 'relative', overflow: 'hidden', zIndex: 11 }}>
-      <div className="embed-container" style={{ maxWidth: 'var(--content-width)', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+      <div
+        className="mx-auto w-full max-w-[1400px] px-5 md:px-8 xl:px-16"
+        style={{
+          position: 'relative',
+          zIndex: 1
+        }}
+      >
         {/* Header */}
         <div className="embed-header mb-[58px]">
           <SectionHeader
-            badge="Work"
+            badge="WORK"
             title1="A Look Inside"
             title2="Our Craft"
           />

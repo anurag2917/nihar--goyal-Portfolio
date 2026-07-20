@@ -15,76 +15,88 @@ const CTA = () => {
   }, []);
 
   return (
-    <section className="cta-section pt-[60px] pb-[60px] md:pt-[100px] md:pb-[100px] lg:pt-[70px]" id="contact" style={{ position: 'relative', zIndex: 12 }}>
-      <div className="cta-top-content">
-        <div className="cta-left">
+    <section
+      className="cta-section pt-[60px] pb-[60px] md:pt-[100px] md:pb-[100px] lg:pt-[70px]"
+      id="contact"
+      style={{ position: 'relative', zIndex: 12 }}
+    >
+      <div className="mx-auto w-full max-w-[1400px] px-5 md:px-8 xl:px-16">
+        <div className="cta-top-content">
+          <div className="cta-left">
 
-          <h2 className="cta-title">
-           Let's Build Your Next <br/>
-            <span className="highlight">Growth Engine</span>
-          </h2>
+            <h2 className="cta-title">
+              <span className="cta-kicker">
+                Let's Build
+              </span>
+              <span className="cta-main">
+                Your Next
+              </span>
+              <span className="cta-highlight">
+                Growth Engine
+              </span>
+            </h2>
 
 
 
-          
-        </div>
 
-        <div className="cta-right">
-           <form className="cta-form-card" onSubmit={handleSubmit}>
+          </div>
+
+          <div className="cta-right">
+            <form className="cta-form-card" onSubmit={handleSubmit}>
               <div className="form-inputs flex flex-col gap-6">
-                 <div className="flex flex-col md:flex-row gap-6 w-full">
-                    <div className="fi-group">
-                       <label htmlFor="cta-name">YOUR NAME</label>
-                       <input id="cta-name" type="text" name="name" className="fi-input" placeholder="John Doe" autoComplete="name" required />
-                    </div>
-                    <div className="fi-group">
-                       <label htmlFor="cta-email">EMAIL ADDRESS</label>
-                       <input id="cta-email" type="email" name="email" className="fi-input" placeholder="hello@example.com" autoComplete="email" required />
-                    </div>
-                 </div>
-                 <div className="fi-group w-full">
-                    <label htmlFor="cta-project">PROJECT TYPE</label>
-                    <select id="cta-project" name="projectType" className="fi-input w-full" required defaultValue="">
-                       <option value="" disabled hidden>Select a service...</option>
-                       <option value="Branding & Strategy">Branding & Strategy</option>
-                       <option value="UI/UX & Web Design">UI/UX & Web Design</option>
-                       <option value="Automated Systems">Automated Systems</option>
-                       <option value="AI Integration">AI Integration</option>
-                       <option value="Other">Other</option>
-                    </select>
-                 </div>
+                <div className="flex flex-col md:flex-row gap-6 w-full">
+                  <div className="fi-group">
+                    <label htmlFor="cta-name">YOUR NAME</label>
+                    <input id="cta-name" type="text" name="name" className="fi-input" placeholder="John Doe" autoComplete="name" required />
+                  </div>
+                  <div className="fi-group">
+                    <label htmlFor="cta-email">EMAIL ADDRESS</label>
+                    <input id="cta-email" type="email" name="email" className="fi-input" placeholder="hello@example.com" autoComplete="email" required />
+                  </div>
+                </div>
+                <div className="fi-group w-full">
+                  <label htmlFor="cta-project">PROJECT TYPE</label>
+                  <select id="cta-project" name="projectType" className="fi-input w-full" required defaultValue="">
+                    <option value="" disabled hidden>Select a service...</option>
+                    <option value="Branding & Strategy">Branding & Strategy</option>
+                    <option value="UI/UX & Web Design">UI/UX & Web Design</option>
+                    <option value="Automated Systems">Automated Systems</option>
+                    <option value="AI Integration">AI Integration</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
               </div>
 
-              <button type="submit" className="start-btn-large group/btn" aria-label="Start Project">
-                 Start Project
-                 <div className="start-btn-icon flex items-center justify-center" aria-hidden="true">
-                   <svg
-                     width="14"
-                     height="14"
-                     viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     strokeWidth="2.5"
-                     strokeLinecap="round"
-                     strokeLinejoin="round"
-                     className="transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 text-white"
-                   >
-                     <line x1="7" y1="17" x2="17" y2="7"></line>
-                     <polyline points="7 7 17 7 17 17"></polyline>
-                   </svg>
-                 </div>
+              <button type="submit" className="start-btn-large group/btn" aria-label="Let's Connect">
+                Let's Connect
+                <div className="start-btn-icon flex items-center justify-center" aria-hidden="true">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 text-white"
+                  >
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </div>
               </button>
 
               <div className="fc-footer">
-                 <div className="fc-reply" role="status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Replies within 24 hours</div>
+                <div className="fc-reply" role="status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Replies within 24 hours</div>
               </div>
-           </form>
+            </form>
+          </div>
+
         </div>
-
       </div>
-
-
-      <style dangerouslySetInnerHTML={{__html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .pt-card {
           transform: translateY(var(--y-rest));
           transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;

@@ -67,7 +67,7 @@ html, body {
 .app-container {
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 2rem var(--content-padding-desktop);
+  padding: 0;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -262,21 +262,24 @@ html, body {
 
 .hero {
   position: relative;
-  width: 100vw;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  margin-top: -2rem; /* Pull up to sit close to navigation */
-  height: 100vh;
-  min-height: 650px;
-  background: radial-gradient(circle at 50% 30%, #ffffff 0%, #fcfaf7 50%, #f8f3ed 100%);
+  width: 100%;
+  margin: 0 auto;
+
+  min-height: max(100svh, 650px);
+  height: auto;
+
+  background: radial-gradient(
+    circle at 50% 30%,
+    #ffffff 0%,
+    #fcfaf7 50%,
+    #f8f3ed 100%
+  );
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden;
+  overflow: visible;
 }
-
 /* --- Radial glows --- */
 .hero__glow {
   position: absolute;
@@ -345,7 +348,7 @@ html, body {
 .hero__kicker {
   display: block;
   font-family: 'Inter', sans-serif !important;
-  font-size: 0.8rem;
+  font-size: 1.275rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -541,7 +544,7 @@ html, body {
 .hero__logo-ticker-track {
   display: flex;
   align-items: center;
-  gap: 5rem;
+  gap: 3rem;
   animation: hero-logo-scroll 24s linear infinite;
   width: max-content;
 }
@@ -819,6 +822,9 @@ html, body {
   margin-left: -50vw;
   margin-right: -50vw;
   z-index: 1; /* Fixed stacking order */
+  /* Solves hero overlap independently: covers any underlying hero background across full viewport */
+  background-color: var(--bg-color);
+   
 }
 
 .logo-header {
@@ -886,27 +892,40 @@ html, body {
 .logo-reveal-container {
   position: relative;
   z-index: 20; /* Ensure the logo section stacks above the hero portrait */
-  margin-top: -100px; /* Pull the entire logo section and subsequent sections up to overlap the hero */
+  margin-top: 0; /* Remove layout distortion created by negative top margin */
+  /* Pure visual positioning: shifts section over the hero during paint/composite */
+  /* Preserves document flow: pulls subsequent sections up flush below the visually shifted container */
+  /*
+   * FIX: isolation:isolate creates a new stacking context here.
+   * This prevents the hero's warm radial-gradient (#f8f3ed bottom stop) from
+   * compositing through the carousel's semi-transparent box-shadow, which was
+   * the direct cause of the orange/beige strip at the bottom of the white bar.
+   */
+  isolation: isolate;
+
 }
 
-/* Logo Carousel Floating Showcase */
+/* Logo Carousel Floating Showcase — Pure Intrinsic Component */
 .logo-carousel-card {
-  width: 100vw !important; /* Full width spanning screen edge to edge */
-  max-width: none !important;
+  width: 100%;
   position: relative;
-  margin-top: 0; /* Let container pull it up */
-  margin-bottom: 0;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding: 1.5rem 0 !important; /* Horizontal padding moved to constrained inner content */
-  background: #ffffff; /* Solid white background */
-  border-radius: 0 !important; /* Strip away border radius for sharp flush corners */
-  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.04), 0 -10px 30px -10px rgba(0,0,0,0.04) !important; /* Soft premium card shadow, shrunk horizontally to eliminate side shadow lines */
-  border: none !important; /* Remove borders */
-  z-index: 15; /* Fixed stacking order - sits above portrait and hero grid */
-  overflow: hidden;
+  /*
+   * PURE INTRINSIC SIZING (ZERO MAGIC NUMBERS):
+   * 1. Content-driven height: Sized purely by intrinsic content (.logo-carousel-wrapper)
+   *    and clean, symmetric vertical padding (1.5rem top/bottom).
+   * 2. Independent component: Does not know or care about .hero overlap (margin-top on container).
+   *    Hero overlap is handled completely independently outside this component.
+   */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0;
+  background: #ffffff;
+  border-radius: 0;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.04);
+  border: none;
+  z-index: 15;
+ 
 }
 
 .logo-carousel-wrapper {
@@ -924,11 +943,17 @@ html, body {
 .logo-carousel {
   display: flex;
   align-items: center;
-  gap: 2rem; /* Reduced gap for denser layout */
-  animation: scroll 50s linear infinite; /* Slowed down from 40s to 50s */
+  /* Change 5: Increased gap 2rem → 2.5rem for better breathing room */
+  gap: 2.5rem;
+  animation: scroll 50s linear infinite;
   width: max-content;
 }
 
+/* ── Logo Card ─────────────────────────────────────────────────────────────
+   The card itself is a flex column. No sizing happens here — sizing is
+   delegated entirely to .logo-img-wrapper and individual .logo-* classes.
+   ────────────────────────────────────────────────────────────────────────── */
+/* Change 4: Flexible card slot. Decoupled with min-height to accommodate varying aspect ratios. */
 .logo-card {
   background: transparent;
   padding: 0 1rem;
@@ -936,41 +961,95 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.35rem;
+  width: 180px;         /* Fixed card slot width — consistent carousel rhythm */
+  min-height: 48px;     /* Decoupled from fixed height — allows natural expansion if needed */
+  flex-shrink: 0;       /* Prevent carousel from squeezing cards */
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
   opacity: 0.9;
 }
 
+/* Change 3a: Card lifts gently on hover */
 .logo-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-2px);
   opacity: 1;
 }
 
+/* Change 3b: Logo image gets a subtle scale + full opacity on hover.
+   Keeps the interaction feeling premium rather than aggressive. */
+.logo-card:hover .logo-img {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+/* ── Logo Image Wrapper ─────────────────────────────────────────────────────
+   Fixed-size container ensures every logo occupies the same optical footprint
+   and is perfectly centred vertically and horizontally.
+   ────────────────────────────────────────────────────────────────────────── */
+/* Wrapper min-height allows natural vertical centering and growth without constraint */
 .logo-img-wrapper {
+  width: 170px;
+  min-height: 48px;  /* Decoupled from fixed 48px — adapts naturally to logo geometry */
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
   color: #0F0F0F;
 }
 
-.logo-img-wrapper svg,
-.logo-img-wrapper img {
+/* ── Base logo image class ──────────────────────────────────────────────────
+   Step 4: .logo-img is the reusable base applied to every <img>.
+   No transform scaling anywhere — sizing via max-width / max-height only.
+   Per-logo classes below override these defaults where needed.
+   ────────────────────────────────────────────────────────────────────────── */
+/* Change 2: Increased default logo size; added opacity + transition for hover layer */
+.logo-img {
+  display: block;
+  object-fit: contain;
+  max-height: 36px;   /* Increased from 34px */
+  max-width: 160px;   /* Increased from 140px */
   width: auto;
   height: auto;
-  max-height: 28px;
-  max-width: 170px;
-  object-fit: contain;
-  display: block;
+  opacity: 0.8;       /* Slightly dimmed at rest — pops on hover */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Powers .logo-card:hover .logo-img */
 }
-.logo-via {
-  font-size: 0.6rem;
-  color: #999;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-top: 2px;
-  white-space: nowrap;
-}
+
+/* ── Per-logo optical adjustments ──────────────────────────────────────────
+   Step 5: Replace transform:scale() with semantic max-width / max-height
+   overrides. Only logos that genuinely need resizing get a class.
+   Never use transform: scale() here.
+   ────────────────────────────────────────────────────────────────────────── */
+
+/* Kalindi Gandhi Group — wordmark needs more room horizontally */
+.logo-kalindi   { max-width: 120px; max-height: 48px; }
+
+/* Chai Sutta Bar — tall emblem, allow extra height */
+.logo-chaisutta { max-width: 100px; max-height: 46px; }
+
+/* Godrej Properties — standard wordmark, default sizing is fine */
+.logo-godrej    { max-width: 120px; max-height: 36px; }
+
+/* Kaffee-La — compact logo, default sizing is fine */
+.logo-kaffeela  { max-width: 120px; max-height: 36px; }
+
+/* High On Tales — icon-heavy mark, give it slightly more height */
+.logo-highontales { max-width: 130px; max-height: 38px; }
+
+/* Maatea — medium wordmark */
+.logo-maatea    { max-width: 120px; max-height: 40px; }
+
+/* Community Platform — wide badge, needs more horizontal space */
+.logo-community { max-width: 140px; max-height: 48px; }
+
+/* Stellaspire — wordmark similar to chaisutta scale */
+.logo-stellaspire { max-width: 120px; max-height: 44px; }
+
+/* Strand — compact square-ish mark */
+.logo-strand    { max-width: 110px; max-height: 40px; }
+
+/* Airen Group — standard wordmark */
+.logo-airen     { max-width: 120px; max-height: 44px; }
+
+/* Step 6: .logo-via removed — class and JSX deleted */
 
 .logo-separator {
   color: rgba(0,0,0,0.1);
@@ -2655,31 +2734,26 @@ html, body {
    ========================================= */
 
 .cta-section {
-  padding: 8rem 0 4rem;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: var(--content-width);
-  margin: 0 auto;
   position: relative;
+  width: 100%;
 }
 
 .cta-top-content {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 6rem;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
   gap: 4rem;
+  align-items: start;
+  margin-bottom: 6rem;
   position: relative;
   z-index: 2;
 }
 
 .cta-left {
-  flex: 0 0 45%;
   position: relative;
 }
 
 .cta-title {
-  font-size: 4.5rem;
+  font-size: clamp(3rem, 4.8vw, 4.8rem);
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -2px;
@@ -2688,6 +2762,26 @@ html, body {
 }
 
 .cta-title .highlight { color: var(--accent-orange); }
+
+.cta-kicker {
+  display: block;
+  font-size: 20.4px;
+  font-weight: 600;
+  color: #0F0F0F;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.9rem;
+  line-height: 1;
+}
+
+.cta-main {
+  display: block;
+}
+
+.cta-highlight {
+  display: block;
+  color: #ff5a00;
+  font-style: italic;
+}
 
 .cta-desc {
   font-size: 1.15rem;
@@ -2719,7 +2813,6 @@ html, body {
 
 /* Form Card on Right */
 .cta-right {
-  flex: 1;
   position: relative;
 }
 
@@ -2987,7 +3080,7 @@ textarea.fi-input { resize: vertical; min-height: 100px; }
 }
 
 @media (max-width: 768px) {
-  .cta-title { font-size: 3.5rem; }
+  .cta-title { font-size: clamp(1.8rem, 4vw + 1rem, 3.2rem); }
   .cta-form-card { padding: 1.5rem; }
   .project-types { grid-template-columns: 1fr; }
   .form-inputs { flex-direction: column; }
@@ -3566,7 +3659,7 @@ textarea.fi-input { resize: vertical; min-height: 100px; }
 .ftw-stage {
   position: relative;
   width: 100%;
-  max-width: 1140px;
+  max-width: 1400px;
   height: 785px;
   margin: 0 auto;
   overflow: visible;

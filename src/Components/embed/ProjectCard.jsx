@@ -36,7 +36,7 @@ const ProjectCard = memo(({ project }) => {
           className="ec-thumbnail relative w-full h-full block overflow-hidden"
           style={{
             borderRadius: 'inherit',
-            aspectRatio: project.aspectRatio || '3/4',
+            aspectRatio: project.aspectRatio || '9/16',
             position: 'relative',
           }}
         >

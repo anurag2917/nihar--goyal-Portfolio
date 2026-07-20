@@ -13,7 +13,15 @@ const Footer = ({ onPrivacyClick }) => {
             </p>
           </div>
           <div className="footer-cta-right">
-            <a href="#contact" className="footer__cta">Let's Connect</a>
+            <a href="#contact" className="footer__cta">
+              Let's Connect
+              <span className="footer__cta-icon" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </span>
+            </a>
           </div>
         </div>
       </div>
@@ -131,8 +139,8 @@ const Footer = ({ onPrivacyClick }) => {
         .footer__cta {
           display: inline-flex;
           align-items: center;
-          justify-content: center;
-          padding: 0.85rem 2.25rem;
+          gap: 0.75rem;
+          padding: 0.6rem 0.6rem 0.6rem 1.75rem;
           background-color: #ff5a00;
           color: #121212 !important;
           font-weight: 700;
@@ -144,10 +152,21 @@ const Footer = ({ onPrivacyClick }) => {
           cursor: pointer;
         }
 
-        .footer__cta:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 10px 25px rgba(255, 90, 0, 0.35);
-          background-color: #ff6d1b;
+        .footer__cta-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          background: #121212;
+          border-radius: 50%;
+          color: #fff;
+          flex-shrink: 0;
+          transition: transform 0.3s ease;
+        }
+
+        .footer__cta:hover .footer__cta-icon {
+          transform: translate(2px, -2px) rotate(-45deg);
         }
 
         .footer-divider {

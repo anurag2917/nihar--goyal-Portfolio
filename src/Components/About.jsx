@@ -7,7 +7,8 @@ const About = () => {
 
   return (
     <section className="w-full py-[60px] md:py-[100px] font-sans" id="about">
-      <div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-8 w-full">
+      <div className="mx-auto w-full max-w-[1400px] px-5 md:px-8 xl:px-16">
+        <div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-16 w-full">
         {/* Left Column */}
         <div className="flex-1 flex flex-col justify-center max-w-2xl">
           <m.div
@@ -15,10 +16,10 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-center gap-2 mb-8"
+            className="mb-3"
           >
-            <span className="text-[10px] font-bold tracking-widest text-[#ff5a00] uppercase">
-              About Me
+            <span className="font-['Inter'] text-[14px] font-semibold tracking-[0.1em] uppercase text-[#ff5a00]">
+              WHAT I DO
             </span>
           </m.div>
 
@@ -29,9 +30,18 @@ const About = () => {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="relative mb-8"
           >
-            <h2 className="text-[2rem] sm:text-[2.5rem] md:text-[3.8rem] leading-[1.08] text-[#0F0F0F] tracking-tight">
-              <span className="block font-serif font-semibold">Creative Direction</span>
-              <span className="block font-serif font-semibold">built for <span className="italic text-[#ff5a00]">business growth.</span></span>
+            <h2 className="text-[2rem] sm:text-[2.5rem] md:text-[3.8rem] leading-[1.12] tracking-tight">
+              <span className="block font-serif font-semibold text-[#0F0F0F]">
+                Creative
+              </span>
+
+              <span className="block font-serif font-semibold text-[#0F0F0F]">
+                Direction Built for
+              </span>
+
+              <span className="block font-serif font-semibold italic text-[#ff5a00]">
+                Business Growth
+              </span>
             </h2>
           </m.div>
 
@@ -52,47 +62,42 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-white border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-3xl sm:rounded-full p-3 sm:p-2 sm:pr-8 w-full sm:w-auto text-center sm:text-left"
+            className="mb-16"
           >
-            <div className="flex items-center gap-4">
-              <div className="w-10 h-10 bg-orange-50 rounded-full flex items-center justify-center text-[#ff5a00] shrink-0">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <line x1="5" y1="19" x2="19" y2="5"></line>
-                  <polyline points="9 5 19 5 19 15"></polyline>
-                </svg>
-              </div>
-              <span className="text-[13px] font-bold text-[#0F0F0F]">
-                Available for exciting projects
-              </span>
-            </div>
-            <div className="hidden sm:block w-px h-6 bg-gray-200 mx-2"></div>
             <a
               href="#contact"
-              className="text-[10px] font-bold tracking-widest text-[#0F0F0F] uppercase flex items-center gap-2 hover:text-[#ff5a00] transition-colors py-2 sm:py-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff5a00] focus-visible:ring-offset-2 rounded"
+              className="group inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-white border-2 border-[#0F0F0F] rounded-3xl sm:rounded-full p-2 sm:pl-3 sm:pr-2.5 w-full sm:w-auto text-center sm:text-left hover:shadow-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff5a00]"
             >
-              LET'S CONNECT
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <line x1="5" y1="19" x2="19" y2="5"></line>
-                <polyline points="9 5 19 5 19 15"></polyline>
-              </svg>
+              <div className="flex items-center gap-3 sm:gap-3.5">
+                <div className="w-8 h-8 sm:w-9 sm:h-9 bg-[#ff5a00]/15 rounded-full flex items-center justify-center shrink-0">
+                  <div className="w-2.5 h-2.5 bg-[#ff5a00] rounded-full"></div>
+                </div>
+                <span className="text-[13px] sm:text-[14.5px] font-medium text-[#0F0F0F]">
+                  Available for exciting projects
+                </span>
+              </div>
+
+              <div className="hidden sm:block w-px h-6 bg-gray-300"></div>
+
+              <div className="flex items-center gap-3 sm:gap-3.5 pb-1 sm:pb-0">
+                <span className="text-[13px] sm:text-[14.5px] font-bold text-[#0F0F0F] group-hover:text-[#ff5a00] transition-colors">
+                  Let's Connect
+                </span>
+                <div className="w-8 h-8 sm:w-9 sm:h-9 bg-[#ff5a00] text-white rounded-full flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-sm">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
             </a>
           </m.div>
         </div>
@@ -176,6 +181,7 @@ const About = () => {
               ))}
             </div>
           </m.div>
+        </div>
         </div>
       </div>
     </section>

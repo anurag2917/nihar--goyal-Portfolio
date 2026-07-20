@@ -9,7 +9,7 @@ const Clients = () => {
       className="relative w-full pt-[60px] pb-[60px] md:pt-[100px] md:pb-[100px] lg:pb-[50px] overflow-visible font-sans"
       id="clients"
     >
-      <div className="w-full flex flex-col gap-12">
+      <div className="mx-auto w-full max-w-[1400px] px-5 md:px-8 xl:px-16 flex flex-col gap-10">
         <SectionHeader
           badge="Testimonials"
           title1="Trusted by Brands"

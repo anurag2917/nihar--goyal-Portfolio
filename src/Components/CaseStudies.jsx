@@ -5,17 +5,19 @@ import { caseStudiesData } from '../data/caseStudiesData';
 const CaseStudies = () => {
   return (
     <section className="w-full py-[60px] md:py-[100px] font-sans" id="work">
-      <div className="flex flex-col gap-10">
+      <div className="mx-auto w-full max-w-[1400px] px-5 md:px-8 xl:px-16">
+        <div className="flex flex-col gap-10">
         <SectionHeader
-          badge="Case Studies"
+          badge="CASE STUDIES"
           title1="Work That"
-          title2="Moved the Needle."
+          title2="Moved the Needle"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {caseStudiesData.map((study, index) => (
             <CaseStudyCard key={study.id} study={study} index={index} />
           ))}
+        </div>
         </div>
       </div>
     </section>

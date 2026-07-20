@@ -37,10 +37,11 @@ const Process = () => {
 
   return (
     <section
-      className="w-full py-[60px] md:py-[100px] relative overflow-hidden font-sans flex items-center"
+      className="process-section w-full py-[60px] md:py-[100px] relative overflow-hidden font-sans flex items-center"
       id="process"
     >
-      <style dangerouslySetInnerHTML={{__html: `
+      <div className="mx-auto w-full max-w-[1400px] px-5 md:px-8 xl:px-16">
+        <style dangerouslySetInnerHTML={{__html: `
         @keyframes pulse-flow {
           0% {
             stroke-dashoffset: 150;
@@ -61,13 +62,13 @@ const Process = () => {
       `}} />
 
       {/* Desktop / Large Screens Layout */}
-      <div className="hidden lg:block w-full relative h-[650px] max-w-[var(--content-width)] mx-auto px-0">
+      <div className="hidden lg:block w-full relative h-[650px]">
         {/* Header Block */}
-        <div className="absolute left-0 top-[4%] max-w-[28%] z-30">
+        <div className="absolute left-0 top-[6%] w-[34%] max-w-[420px] z-30">
           <SectionHeader
             badge="Process"
             title1="Our"
-            title2="Process."
+            title2="Process"
             desc="A clear, collaborative process designed to help your brand grow with confidence."
           />
         </div>
@@ -99,7 +100,7 @@ const Process = () => {
 
               {/* The Background Wavy Track */}
               <path
-                d="M 15 55 C 20 55, 25 60, 30 60 C 38 60, 47 38, 55 38 C 63 38, 72 60, 80 60 C 84 60, 88 55, 92 55"
+                d="M 8 55 C 14 55, 20 60, 26 60 C 34 60, 43 38, 50 38 C 58 38, 68 60, 76 60 C 83 60, 89 55, 94 55"
                 stroke="#f5ebe6"
                 strokeWidth="1.2"
                 fill="none"
@@ -107,7 +108,7 @@ const Process = () => {
 
               {/* The Animated Wavy Line */}
               <m.path
-                d="M 15 55 C 20 55, 25 60, 30 60 C 38 60, 47 38, 55 38 C 63 38, 72 60, 80 60 C 84 60, 88 55, 92 55"
+                d="M 8 55 C 14 55, 20 60, 26 60 C 34 60, 43 38, 50 38 C 58 38, 68 60, 76 60 C 83 60, 89 55, 94 55"
                 stroke="url(#line-gradient)"
                 strokeWidth="2.5"
                 strokeLinecap="round"
@@ -120,7 +121,7 @@ const Process = () => {
 
               {/* The Glowing Pulse that flows along the path */}
               <m.path
-                d="M 15 55 C 20 55, 25 60, 30 60 C 38 60, 47 38, 55 38 C 63 38, 72 60, 80 60 C 84 60, 88 55, 92 55"
+                d="M 8 55 C 14 55, 20 60, 26 60 C 34 60, 43 38, 50 38 C 58 38, 68 60, 76 60 C 83 60, 89 55, 94 55"
                 stroke="url(#pulse-gradient)"
                 strokeWidth="3.5"
                 strokeLinecap="round"
@@ -140,7 +141,7 @@ const Process = () => {
                 key={stepItem.step}
                 style={{
                   position: 'absolute',
-                  left: stepItem.step === '03' ? 'calc(80% - 12px)' : `${stepItem.x}%`,
+                  left: `${stepItem.x}%`,
                   top: `${stepItem.y}%`,
                   transform: 'translate(-50%, -50%)',
                   zIndex: 20,
@@ -248,7 +249,7 @@ const Process = () => {
           <SectionHeader
             badge="Process"
             title1="Our"
-            title2="Process."
+            title2="Process"
             desc="A streamlined, AI-enhanced workflow designed to execute your vision without draining your bandwidth."
           />
         </div>
@@ -295,6 +296,7 @@ const Process = () => {
               </m.div>
             );
           })}
+        </div>
         </div>
       </div>
     </section>

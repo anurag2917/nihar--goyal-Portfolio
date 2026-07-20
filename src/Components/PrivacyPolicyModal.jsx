@@ -19,6 +19,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }) => {
         transition={{ type: 'spring', damping: 25, stiffness: 250 }}
         className="privacy-modal-card"
         onClick={(e) => e.stopPropagation()}
+        onWheel={(e) => e.stopPropagation()}
       >
         {/* Header */}
         <div className="privacy-modal-header">
@@ -177,12 +178,16 @@ const PrivacyPolicyModal = ({ isOpen, onClose }) => {
             display: flex;
             flex-direction: column;
             gap: 28px;
-            scrollbar-width: thin;
-            scrollbar-color: rgba(255, 90, 0, 0.3) rgba(0, 0, 0, 0.2);
+
+            overscroll-behavior: contain;
+            -webkit-overflow-scrolling: touch;
+
+            scrollbar-width: auto;
+            scrollbar-color: #ff5a00 rgba(255,255,255,0.08);
           }
 
           .privacy-modal-content::-webkit-scrollbar {
-            width: 6px;
+            width: 10px;
           }
 
           .privacy-modal-content::-webkit-scrollbar-track {
@@ -190,8 +195,14 @@ const PrivacyPolicyModal = ({ isOpen, onClose }) => {
           }
 
           .privacy-modal-content::-webkit-scrollbar-thumb {
-            background: rgba(255, 90, 0, 0.3);
-            border-radius: 4px;
+            background: rgba(255, 90, 0, 0.75);
+            border-radius: 999px;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+          }
+
+          .privacy-modal-content::-webkit-scrollbar-thumb:hover {
+            background: #ff5a00;
           }
 
           .privacy-section {

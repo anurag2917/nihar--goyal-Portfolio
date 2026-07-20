@@ -1,10 +1,10 @@
-import { lazy, Suspense, useState, useCallback } from 'react'
+import { lazy, Suspense, useState, useCallback, useEffect } from 'react'
 import Hero from './Components/Hero'
 import About from './Components/About'
 import Logo from './Components/Logo'
 import './index.css'
 import ScrollReveal from './Components/ScrollReveal'
-import { ReactLenis } from 'lenis/react'
+import { ReactLenis, useLenis } from 'lenis/react'
 import 'lenis/dist/lenis.css'
 import { LazyMotion, domMax, AnimatePresence } from 'framer-motion'
 import PageLoader from './Components/PageLoader'
@@ -23,6 +23,17 @@ function App() {
   const [loading, setLoading] = useState(true)
   const [showPrivacy, setShowPrivacy] = useState(false)
   const handleLoaderComplete = useCallback(() => setLoading(false), [])
+  const lenis = useLenis()
+
+  useEffect(() => {
+    if (!lenis) return;
+
+    if (showPrivacy) {
+      lenis.stop()
+    } else {
+      lenis.start()
+    }
+  }, [showPrivacy, lenis])
 
   return (
     <ReactLenis root options={{ lerp: 0.1, wheelMultiplier: 1.2 }}>
