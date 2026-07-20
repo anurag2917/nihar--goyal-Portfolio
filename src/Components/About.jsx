@@ -19,7 +19,7 @@ const About = () => {
             className="mb-3"
           >
             <span className="font-['Inter'] text-[14px] font-semibold tracking-[0.1em] uppercase text-[#ff5a00]">
-              WHAT I DO
+              ABOUT ME
             </span>
           </m.div>
 
