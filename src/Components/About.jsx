@@ -12,23 +12,11 @@ const About = () => {
         {/* Left Column */}
         <div className="flex-1 flex flex-col justify-center max-w-2xl">
           <m.div
-            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-3"
-          >
-            <span className="font-['Inter'] text-[14px] font-semibold tracking-[0.1em] uppercase text-[#ff5a00]">
-              ABOUT ME
-            </span>
-          </m.div>
-
-          <m.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="relative mb-8"
+            className="relative mb-7"
           >
             <h2 className="text-[2rem] sm:text-[2.5rem] md:text-[3.8rem] leading-[1.12] tracking-tight">
               <span className="block font-serif font-semibold text-[#0F0F0F]">
@@ -66,24 +54,24 @@ const About = () => {
           >
             <a
               href="#contact"
-              className="group inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-white border-2 border-[#0F0F0F] rounded-3xl sm:rounded-full p-2 sm:pl-3 sm:pr-2.5 w-full sm:w-auto text-center sm:text-left hover:shadow-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff5a00]"
+              className="group inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-white border border-[#E5E7EB] rounded-3xl sm:rounded-full p-2 sm:pl-4 sm:pr-2.5 w-full sm:w-auto text-center sm:text-left shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.06)] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff5a00]"
             >
               <div className="flex items-center gap-3 sm:gap-3.5">
                 <div className="w-8 h-8 sm:w-9 sm:h-9 bg-[#ff5a00]/15 rounded-full flex items-center justify-center shrink-0">
                   <div className="w-2.5 h-2.5 bg-[#ff5a00] rounded-full"></div>
                 </div>
-                <span className="text-[13px] sm:text-[14.5px] font-medium text-[#0F0F0F]">
+                <span className="text-[13px] font-medium text-[#666666]">
                   Available for exciting projects
                 </span>
               </div>
 
-              <div className="hidden sm:block w-px h-6 bg-gray-300"></div>
+              <div className="hidden sm:block w-px h-6 bg-[#E5E7EB]"></div>
 
-              <div className="flex items-center gap-3 sm:gap-3.5 pb-1 sm:pb-0">
-                <span className="text-[13px] sm:text-[14.5px] font-bold text-[#0F0F0F] group-hover:text-[#ff5a00] transition-colors">
+              <div className="flex items-center gap-4 pl-2 pb-1 sm:pb-0">
+                <span className="text-[15px] font-semibold tracking-[-0.01em] text-[#0F0F0F] group-hover:text-[#ff5a00] transition-colors">
                   Let's Connect
                 </span>
-                <div className="w-8 h-8 sm:w-9 sm:h-9 bg-[#ff5a00] text-white rounded-full flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-sm">
+                <div className="w-9 h-9 bg-[#ff5a00] text-white rounded-full flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-sm">
                   <svg
                     width="16"
                     height="16"
@@ -93,6 +81,7 @@ const About = () => {
                     strokeWidth="2.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
+                    className="group-hover:rotate-45 transition-transform duration-300"
                   >
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
@@ -118,14 +107,29 @@ const About = () => {
                   FOCUS AREAS
                 </span>
               </div>
-              <ul className="flex flex-col gap-4 text-[1.4rem] font-medium text-[#0F0F0F]">
-                {focusAreas.map((area, idx) => (
-                  <li key={idx}>{area}</li>
+              <ul className="space-y-5">
+                {focusAreas.map(({ title, icon: Icon }) => (
+                  <li
+                    key={title}
+                    className="group flex items-center gap-3 transition-all duration-300 hover:translate-x-1"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-[#ff5a00]/10 group-hover:bg-[#ff5a00]/15 flex items-center justify-center shrink-0 transition-colors">
+                      <Icon
+                        size={20}
+                        className="text-[#ff5a00] group-hover:scale-110 transition-transform"
+                        strokeWidth={2.25}
+                      />
+                    </div>
+
+                    <span className="text-[1.25rem] font-semibold text-[#0F0F0F]">
+                      {title}
+                    </span>
+                  </li>
                 ))}
               </ul>
             </div>
 
-            <div className="relative w-36 h-36 flex items-center justify-center mr-4">
+            <div className="relative w-40 h-40 flex items-center justify-center mr-4">
               <m.svg
                 animate={{ rotate: shouldReduceMotion ? 0 : 360 }}
                 transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}

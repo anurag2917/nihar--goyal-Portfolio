@@ -3,7 +3,6 @@ import { m, AnimatePresence } from 'framer-motion';
 import { projectsData, projectFilters } from '../data/projectsData';
 import ProjectFilters from './embed/ProjectFilters';
 import ProjectCard from './embed/ProjectCard';
-import SectionHeader from './common/SectionHeader';
 
 const EmbedProject = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -37,20 +36,32 @@ const EmbedProject = () => {
         }}
       >
         {/* Header */}
-        <div className="embed-header mb-[58px]">
-          <SectionHeader
-            badge="WORK"
-            title1="A Look Inside"
-            title2="Our Craft"
-          />
+        <div className="embed-header flex justify-center mb-14">
+          <m.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="text-center text-[2rem] sm:text-[2.5rem] md:text-[3.8rem] leading-[1.12] tracking-tight"
+          >
+            <span className="font-serif font-semibold text-[#0F0F0F]">
+              A Look Inside{' '}
+            </span>
+
+            <span className="font-serif font-semibold italic text-[#ff5a00]">
+              Our Craft
+            </span>
+          </m.h2>
         </div>
 
         {/* Filters */}
-        <ProjectFilters
-          filters={projectFilters}
-          activeFilter={activeFilter}
-          onSelectFilter={setActiveFilter}
-        />
+        <div className="flex justify-center mb-14">
+          <ProjectFilters
+            filters={projectFilters}
+            activeFilter={activeFilter}
+            onSelectFilter={setActiveFilter}
+          />
+        </div>
 
         {/* Projects Grid */}
         <m.div layout className="embed-projects-grid">

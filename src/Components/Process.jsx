@@ -66,7 +66,6 @@ const Process = () => {
         {/* Header Block */}
         <div className="absolute left-0 top-[6%] w-[34%] max-w-[420px] z-30">
           <SectionHeader
-            badge="Process"
             title1="Our"
             title2="Process"
             desc="A clear, collaborative process designed to help your brand grow with confidence."
@@ -247,7 +246,6 @@ const Process = () => {
       <div className="lg:hidden w-full flex flex-col gap-10 px-0">
         <div>
           <SectionHeader
-            badge="Process"
             title1="Our"
             title2="Process"
             desc="A streamlined, AI-enhanced workflow designed to execute your vision without draining your bandwidth."

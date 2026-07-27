@@ -1,8 +1,22 @@
+import { Target, Users, Network, Sparkles } from 'lucide-react';
+
 export const focusAreas = [
-  'Strategic Brand Vision',
-  'Operational Leadership',
-  'Multi-Channel Execution',
-  'AI-Driven Scalability',
+  {
+    title: 'Strategic Brand Vision',
+    icon: Target,
+  },
+  {
+    title: 'Operational Leadership',
+    icon: Users,
+  },
+  {
+    title: 'Multi-Channel Execution',
+    icon: Network,
+  },
+  {
+    title: 'AI-Driven Scalability',
+    icon: Sparkles,
+  },
 ];
 
 export const whatIDoSkills = [
